@@ -1,0 +1,160 @@
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <div th:include="fragment/head :: head"></div>
+    <title>用户列表</title>
+</head>
+<script th:inline="javascript">
+    /*<![CDATA[*/
+    $(function(){
+
+        var begin = [[${begin}]];
+        var end = [[${end}]];
+        var sources = [[${source}]];
+        var gjzs = [[${gjz}]];
+
+        var dom_begin = document.getElementById("begin");
+        dom_begin.value = begin;
+
+        var dom_end = document.getElementById("end");
+        dom_end.value = end;
+
+        if(sources!=null){
+            var source = sources.split(',');
+            for(var i=0;i<source.length;i++){
+                $("input[value='"+source[i]+"']").addClass("layui-form-checked");
+                $("input[value='"+source[i]+"']").attr("checked","checked");
+            }
+        }
+        if(gjzs!=null){
+            for(var i=0;i<gjzs.length;i++){
+                    var tid = JSON.parse(gjzs)[i].id;
+                $("input[value='"+tid+"']").addClass("layui-form-checked");
+                $("input[value='"+tid+"']").attr("checked","checked");
+            }
+        }
+
+    });
+    var num='';
+    function f1(){
+        save()
+//        layer.open({
+//            content: $('#doc').html(),
+//            offset: '100px',
+//            btn: ['确定', '取消'], //按钮
+//            btn1: function (index) {
+//                save()
+//                layer.close(index);
+//            },
+//            btn2: function () {
+//            }
+//        });
+    }
+    function setval(thiz) {
+      $(thiz).attr("value",$(thiz).val());
+    }
+    function save() {
+        $("#download").submit()
+    }
+    /*]]>*/
+</script>
+<body>
+<form class="layui-form layui-form-pane" action="/news/page" id="query">
+<fieldset id="dataConsole" class="layui-elem-field layui-field-title">
+    <div class="layui-field-box">
+        <div id="articleIndexTop">
+                <div class="layui-form-item">
+                        <div class="">
+                            <label class="layui-form-label">日期</label>
+                            <div class="layui-inline">
+                                <input name="begin" id="begin" lay-verify="date" placeholder="yyyy-mm-dd"
+                                       class="layui-input" onclick="layui.laydate({elem: this})"/>
+                            </div>
+                            <div class="layui-inline">
+                                <input name="end" id="end" lay-verify="date" placeholder="yyyy-mm-dd"
+                                       class="layui-input" onclick="layui.laydate({elem: this})"/>
+                            </div>
+
+                        </div>
+                    <hr/>
+                        <div class="">
+                            <label class="layui-form-label">数据来源</label>
+                            <input type="checkbox" name="source" title="新闻" value="新闻"/>
+                            <input type="checkbox" name="source" title="微博" value="微博"/>
+                            <input type="checkbox" name="source" title="论坛" value="论坛"/>
+                        </div>
+                    <hr/>
+                    <div class="">
+                        <label class="layui-form-label">关键字</label>
+                        <input type="checkbox" name="gjz" th:each="type:${types}" th:title="${type.name}" th:value="${type.id}"/>
+                    </div>
+
+                </div>
+                    <div class="layui-inline">
+                            <input type="submit" value="搜索" class="layui-btn layui-btn-normal" />
+                    </div>
+                    <div class="layui-inline">
+                            <a id="addArticle" class="layui-btn layui-btn-normal" th:abbr="${baseurl}"
+                              onclick="f1()">生成报表</a>
+                    </div>
+        </div>
+    </div>
+</fieldset>
+<fieldset id="dataList" class="layui-elem-field layui-field-title ">
+    <div class="layui-field-box">
+        <div id="dataContent" class="">
+            <table style="" class="layui-table" lay-even="">
+                <thead>
+                <tr>
+                    <th>序号</th>
+                    <!--<th>内容</th>-->
+                    <th>标题</th>
+                    <th>ｕｒｌ</th>
+                    <th>编辑日期</th>
+                    <th>tag</th>
+                </tr>
+                </thead>
+                <tbody id="data">
+
+                <tr th:each="page,iterStat : ${pageImpl}">
+                    <td th:text="${iterStat.index+1}+${pageImpl.number}*${pageImpl.size}"></td>
+                    <td th:text="${page.title}"></td>
+                    <td th:text="${page.content}"></td>
+                    <td th:text="${page.olddate}"></td>
+                    <td th:text="${page.source}"></td>
+                    <!--<div th:include="/fragment/list :: ud"></div>-->
+                </tr>
+                </tbody>
+            </table>
+            <div th:include="/fragment/list :: hidden"></div>
+        </div>
+        <div id="pageNav"></div>
+    </div>
+</fieldset>
+
+</form>
+<!-- layui规范化用法 -->
+<script type="text/javascript">
+    layui.config({
+        base: '/js/'
+    }).use('datalist');
+    layui.use(['form', 'layedit', 'laydate'], function () {
+        var form = layui.form()
+                , layer = layui.layer
+                , layedit = layui.layedit
+                , laydate = layui.laydate
+    });
+
+</script>
+</body>
+<div id="doc" >
+<form id="download" action="/news/word" method="get">
+
+    <div class="layui-inline">
+        <div class="layui-input-inline">
+            <input type="text"  name="num"   placeholder="请输入期号"  id="put1"  onchange="setval(this)"/>
+        </div>
+    </div>
+</form>
+
+</div>
+</html>

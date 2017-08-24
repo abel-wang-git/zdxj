@@ -1,0 +1,67 @@
+
+<html xmlns:th="http://www.thymeleaf.org" style="height: 100%">
+<head >
+    <div th:include="fragment/head :: head"></div>
+</head>
+<body style="height: 100%">
+<div class="layui-layout layui-layout-admin">
+    <div class="layui-header" th:include="fragment/top :: top"></div>
+
+    <div class="layui-side" th:include="fragment/left :: left"> </div>
+
+    <!--主体内容-->
+    <div class="layui-body">
+        <div style="margin:0;position:absolute;top:4px;bottom:0px;width:100%;" class="layui-tab layui-tab-brief" lay-filter="tab" lay-allowclose="true">
+            <ul class="layui-tab-title">
+                <li lay-id="0" class="layui-this">首页</li>
+            </ul>
+            <div class="layui-tab-content">
+                <div class="layui-tab-item layui-show">
+                    <fieldset class="layui-elem-field layui-field-title">
+                        <legend>统计信息</legend>
+                        <div class="layui-field-box">
+                            <div style="display: inline-block; width: 100%;">
+                                <div class="ht-box layui-bg-blue">
+                                    <p>123</p>
+                                    <p>用户总数</p>
+                                </div>
+                                <div class="ht-box layui-bg-red">
+                                    <p>32</p>
+                                    <p>今日注册</p>
+                                </div>
+                                <div class="ht-box layui-bg-green">
+                                    <p>55</p>
+                                    <p>今日登陆</p>
+                                </div>
+                                <div class="ht-box layui-bg-orange">
+                                    <p>123</p>
+                                    <p>文章总数</p>
+                                </div>
+                                <div class="ht-box layui-bg-cyan">
+                                    <p>321</p>
+                                    <p>资源总数</p>
+                                </div>
+                                <div class="ht-box layui-bg-black">
+                                    <p>231</p>
+                                    <p>笔记总数</p>
+                                </div>
+                            </div>
+                        </div>
+                    </fieldset>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div  class="layui-footer" th:include="fragment/bottom :: bottom"> </div>
+
+    <div class="individuation animated flipOutY layui-hide" th:include="fragment/setting"></div>
+</div>
+<!-- layui规范化用法 -->
+<script type="text/javascript">
+    layui.config({
+        base: '/js/'
+    }).use('main');
+</script>
+</body>
+</html>

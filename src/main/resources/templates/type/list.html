@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <div th:include="fragment/head :: head"></div>
+    <title>用户列表</title>
+</head>
+<style>
+    #tj {
+        float: right;
+    }
+</style>
+<body>
+<fieldset id="dataConsole" class="layui-elem-field layui-field-title">
+    <div class="layui-field-box">
+        <div id="articleIndexTop">
+            <form class="layui-form layui-form-pane" action="">
+                <div class="layui-form-item"  style="float: right;">
+                    <div class="layui-inline">
+                        <div class="layui-inline">
+                            <div class="layui-input-inline" style="width:auto">
+                                <a id="addArticle" class="layui-btn layui-btn-normal" th:abbr="${baseurl}"
+                                   onclick=" updateObj(this);">添加关键词</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</fieldset>
+<fieldset id="dataList" class="layui-elem-field layui-field-title ">
+    <div class="layui-field-box">
+        <div id="dataContent" class="">
+            <!--内容区域 ajax获取-->
+            <table style="" class="layui-table" lay-even="">
+                <thead>
+                <tr>
+                    <th>序号</th>
+                    <th>id</th>
+                    <th>keyword</th>
+                    <th>Keyword2</th>
+                    <th>name</th>
+                    <th>编辑</th>
+                </tr>
+                </thead>
+                <tbody>
+
+                <tr th:each="page,iterStat : ${pageImpl}">
+                    <td th:text="${iterStat.index+1}"></td>
+                    <td th:text="${page.id}"></td>
+                    <td th:text="${page.keyword}"></td>
+                    <td th:text="${page.Keyword2}"></td>
+                    <td th:text="${page.name}"></td>
+                    <div th:include="/fragment/list :: ud"></div>
+                </tr>
+                </tbody>
+            </table>
+            <div th:include="/fragment/list :: hidden"></div>
+            <div id="pageNav"></div>
+        </div>
+    </div>
+</fieldset>
+<!-- layui规范化用法 -->
+<script type="text/javascript">
+    layui.config({
+        base: '/js/'
+    }).use('datalist');
+</script>
+</body>
+</html>
