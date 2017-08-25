@@ -1,0 +1,24 @@
+<html xmlns:th="http://www.thymeleaf.org" style="height: 100%">
+<head >
+    <div th:include="fragment/head :: head"></div>
+</head>
+<body style="height: 100%">
+数据文件
+<div th:each="res:${datafile}" th:text="${res['GB']}"></div>
+<div th:each="res:${segment}" th:text="${res['GB']}"></div>
+<table>
+    <thead>
+
+    </thead>
+    <tbody>
+        <tr th:each="space:${tablespace}" class="table">
+            <td th:text="${space['TABLESPACE_NAME']}"></td>
+            <td th:text="${space['TOTAL_MB']}"></td>
+            <td th:text="${space['USED_MB']}"></td>
+            <td th:text="${space['FREE_MB']}"></td>
+            <td th:text="${space['FREE_PCT']}"></td>
+        </tr>
+    </tbody>
+</table>
+</body>
+</html>
