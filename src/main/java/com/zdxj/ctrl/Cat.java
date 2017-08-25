@@ -38,6 +38,19 @@ public class Cat {
 
         model.addAttribute("tablespace",tablespace);
 
+        List session = Dbconnect.query(connect,Constant.session);
+
+        model.addAttribute("session",session);
+
+        List avticeSession = Dbconnect.query(connect,Constant.avtiveSession);
+
+        model.addAttribute("avticese",avticeSession);
+
+        List sessionGroupUser = Dbconnect.query(connect,Constant.sessionGroupUser);
+
+        model.addAttribute("sessGrop",sessionGroupUser);
+
+
 
         return "detail";
     }
