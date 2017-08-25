@@ -5,8 +5,17 @@
 <body style="height: 100%">
 数据文件
 <div th:each="res:${datafile}" th:text="${res['GB']}"></div>
-
+数据文件
 <div th:each="res:${segment}" th:text="${res['GB']}"></div>
+数据库name
+<div th:each="res:${dataName}" th:text="${res['NAME']}"></div>
+实例名
+<div th:each="res:${instance}" th:text="${res['INSTANCE_NAME']}"></div>
+版本信息
+<div th:each="res:${version}" th:text="${res['BANNER']}"></div>
+PSU
+<div th:each="res:${psu}" th:text="${res}"></div>
+
 
 <table class="layui-table">
     <thead>
@@ -26,6 +35,66 @@
             <td th:text="${space['FREE_MB']}"></td>
             <td th:text="${space['FREE_PCT']}"></td>
         </tr>
+    </tbody>
+</table>
+
+<table class="layui-table">
+    <thead>
+        <tr>
+            <th>sessionID</th>
+            <th>日期</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr th:each="se:${sessiondb}" class="table">
+            <td th:text="${se['COUNT(SESSION_ID)']}"></td>
+            <td th:text="${se['TO_CHAR(SAMPLE_TIME,''RR-MON-DDHH24'')']}"></td>
+        </tr>
+    </tbody>
+</table>
+
+<table class="layui-table">
+    <thead>
+        <tr>
+            <th>活动的sessionID</th>
+            <th>日期</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr th:each="se:${avticese}" class="table">
+            <td th:text="${se['COUNT(SESSION_ID)']}"></td>
+            <td th:text="${se['TO_CHAR(SAMPLE_TIME,''RR-MON-DDHH24'')']}"></td>
+        </tr>
+    </tbody>
+</table>
+
+<table class="layui-table">
+    <thead>
+        <tr>
+            <th>用户名</th>
+            <th>链接数</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr th:each="se:${sessGrop}" class="table">
+            <td th:text="${se['USERNAME']}"></td>
+            <td th:text="${se['COUNT(USERNAME)']}"></td>
+        </tr>
+    </tbody>
+</table>
+
+<table class="layui-table">
+    <thead>
+    </thead>
+    <tbody>
+    <tr th:each="se:${psu}" class="table">
+        <td th:text="${se['NAMESPACE']}"></td>
+        <td th:text="${se['ACTION']}"></td>
+        <td th:text="${se['VERSION']}"></td>
+        <td th:text="${se['COMMENTS']}"></td>
+        <td th:text="${se['ACTION_TIME']}"></td>
+        <td th:text="${se['BUNDLE_SERIES']}"></td>
+    </tr>
     </tbody>
 </table>
 

@@ -7,7 +7,7 @@ public class Constant {
     public static final String segment="select sum(bytes)/1024/1024/1024 GB from dba_data_files";
     public static final String session="select * from (select count(SESSION_ID),to_char(sample_time,'RR-MON-DD hh24') from dba_hist_active_sess_history group by to_char(sample_time,'RR-MON-DD hh24') order by 1 desc) where rownum < 6";
     public static final String avtiveSession="select * from (select count(SESSION_ID),to_char(sample_time,'RR-MON-DD hh24') from dba_hist_active_sess_history group by to_char(sample_time,'RR-MON-DD hh24') order by 1 desc) where rownum < 6";
-    public static final String sessionGroupUser="select username,count(username) from v$session where username is not null group by username;";
+    public static final String sessionGroupUser="select username,count(username) from v$session where username is not null group by username";
     public static final String memory="show parameter memory";
     public static final String sga="show parameter sga" ;
     public static final String pga="show parameter pga";

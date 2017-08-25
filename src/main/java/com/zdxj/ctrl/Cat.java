@@ -40,7 +40,7 @@ public class Cat {
 
         List session = Dbconnect.query(connect,Constant.session);
 
-        model.addAttribute("session",session);
+        model.addAttribute("sessiondb",session);
 
         List avticeSession = Dbconnect.query(connect,Constant.avtiveSession);
 
@@ -50,8 +50,51 @@ public class Cat {
 
         model.addAttribute("sessGrop",sessionGroupUser);
 
+       // List  memory= Dbconnect.query(connect,Constant.memory);
 
+     //   model.addAttribute("memory",memory);
 
+      //  List sga = Dbconnect.query(connect,Constant.sga);
+
+       // model.addAttribute("sga",sga);
+
+      //  List pga = Dbconnect.query(connect,Constant.pga);
+
+      //  model.addAttribute("pga",pga);
+
+        List dataName = Dbconnect.query(connect,Constant.databaseName);
+
+        model.addAttribute("dataName",dataName);
+
+        List instance=Dbconnect.query(connect,Constant.instanceName);
+
+        model.addAttribute("instance",instance);
+
+        List version = Dbconnect.query(connect,Constant.version);
+
+        model.addAttribute("version",version);
+
+        List psu = Dbconnect.query(connect,Constant.psu);
+
+        model.addAttribute("psu",psu);
+
+        List dbid = Dbconnect.query(connect,Constant.dbid);
+
+        model.addAttribute("dbid",dbid);
+
+        List contronfile = Dbconnect.query(connect,Constant.controlfile);
+
+        model.addAttribute("controlfrle",contronfile);
+
+        List resourceLimit = Dbconnect.query(connect,Constant.resourceLimit);
+
+        model.addAttribute("resourceLimit",resourceLimit);
+
+        try {
+            connect.close();
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
         return "detail";
     }
 
