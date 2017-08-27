@@ -27,7 +27,7 @@ public class Constant {
     public static final String archLog="archive log list";
     public static final String archFile="select value from v$parameter where name = 'log_archive_dest_1'";
     public static final String envnt="select * from (select event,time_waited_fg/1048576 from v$system_event order by time_waited_fg desc) where rownum < 11";
-    public static final String isBadBlock="select * from v$database_block_corruption;";
+    public static final String isBadBlock="select * from v$database_block_corruption";
 
 
 

@@ -13,8 +13,22 @@
 <div th:each="res:${instance}" th:text="${res['INSTANCE_NAME']}"></div>
 版本信息
 <div th:each="res:${version}" th:text="${res['BANNER']}"></div>
-PSU
-<div th:each="res:${psu}" th:text="${res}"></div>
+dbid
+<div th:each="res:${dbid}" th:text="${res['DBID']}"></div>
+controlfile
+<div th:each="res:${controlfile}" th:text="${res['NAME']}"></div>
+字符集
+<div th:each="res:${chart}" th:text="${res['VALUE']}"></div>
+<div th:each="res:${nchart}" th:text="${res['VALUE']}"></div>
+日志
+<div th:each="res:${logSize}" th:text="${res['MB']}"></div>
+<div th:each="res:${logCount}" th:text="${res['COUNT(1)']}"></div>
+<div th:each="res:${logMember}" th:text="${res['MEMBERS']}"></div>
+<div th:each="res:${logMode}" th:text="${res['LOG_MODE']}"></div>
+<!--<div th:each="res:${archLog}" th:text="${res}"></div>-->
+<div th:each="res:${archFile}" th:text="${res['VALUE']}">
+坏块
+</div><div th:each="res:${isBadBlock}" th:text="${res}"></div>
 
 
 <table class="layui-table">
@@ -79,6 +93,37 @@ PSU
         <tr th:each="se:${sessGrop}" class="table">
             <td th:text="${se['USERNAME']}"></td>
             <td th:text="${se['COUNT(USERNAME)']}"></td>
+        </tr>
+    </tbody>
+</table>
+
+<table class="layui-table">
+    <thead>
+        <tr>
+        </tr>
+    </thead>
+    <tbody>
+        <tr th:each="se:${resourceLimit}" class="table">
+            <td th:text="${se['CURRENT_UTILIZATION']}"></td>
+            <td th:text="${se['RESOURCE_NAME']}"></td>
+            <td th:text="${se['INST_ID']}"></td>
+            <td th:text="${se['MAX_UTILIZATION']}"></td>
+            <td th:text="${se['INITIAL_ALLOCATION']}"></td>
+            <td th:text="${se['LIMIT_VALUE']}"></td>
+            <td th:text="${se['LIMIT_VALUE']}"></td>
+        </tr>
+    </tbody>
+</table>
+
+<table class="layui-table">
+    <thead>
+        <tr>
+        </tr>
+    </thead>
+    <tbody>
+        <tr th:each="se:${envnt}" class="table">
+            <td th:text="${se['EVENT']}"></td>
+            <td th:text="${se['TIME_WAITED_FG/1048576']}"></td>
         </tr>
     </tbody>
 </table>

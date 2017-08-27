@@ -84,11 +84,54 @@ public class Cat {
 
         List contronfile = Dbconnect.query(connect,Constant.controlfile);
 
-        model.addAttribute("controlfrle",contronfile);
+        model.addAttribute("controlfile",contronfile);
 
         List resourceLimit = Dbconnect.query(connect,Constant.resourceLimit);
 
         model.addAttribute("resourceLimit",resourceLimit);
+
+        List chart = Dbconnect.query(connect,Constant.cahrt);
+
+        model.addAttribute("chart",chart);
+
+        List nchart = Dbconnect.query(connect,Constant.ncahrt);
+
+        model.addAttribute("nchart",nchart);
+
+        List logSize = Dbconnect.query(connect,Constant.logSize);
+
+        model.addAttribute("logSize",logSize);
+
+        List logCount = Dbconnect.query(connect,Constant.logCount);
+
+        model.addAttribute("logCount",logCount);
+
+        List logMember = Dbconnect.query(connect,Constant.logMember);
+
+        model.addAttribute("logMember",logMember);
+
+        List logMode = Dbconnect.query(connect,Constant.logMode);
+
+        model.addAttribute("logMode",logMode);
+
+//        List archLog = Dbconnect.query(connect,Constant.archLog);
+//
+//        model.addAttribute("archLog",archLog);
+
+        List archFile = Dbconnect.query(connect,Constant.archFile);
+
+        model.addAttribute("archFile",archFile);
+
+        List envnt = Dbconnect.query(connect,Constant.envnt);
+
+        model.addAttribute("envnt",envnt);
+
+        List isBadBlock = Dbconnect.query(connect,Constant.isBadBlock);
+
+        model.addAttribute("isBadBlock",isBadBlock);
+
+
+
 
         try {
             connect.close();
