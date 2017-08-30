@@ -50,17 +50,17 @@ public class Cat {
 
         model.addAttribute("sessGrop",sessionGroupUser);
 
-       // List  memory= Dbconnect.query(connect,Constant.memory);
+        List  memory= Dbconnect.query(connect,Constant.memory);
 
-     //   model.addAttribute("memory",memory);
+       model.addAttribute("memory",memory);
 
-      //  List sga = Dbconnect.query(connect,Constant.sga);
+        List sga = Dbconnect.query(connect,Constant.sga);
 
-       // model.addAttribute("sga",sga);
+        model.addAttribute("sga",sga);
 
-      //  List pga = Dbconnect.query(connect,Constant.pga);
+        List pga = Dbconnect.query(connect,Constant.pga);
 
-      //  model.addAttribute("pga",pga);
+        model.addAttribute("pga",pga);
 
         List dataName = Dbconnect.query(connect,Constant.databaseName);
 

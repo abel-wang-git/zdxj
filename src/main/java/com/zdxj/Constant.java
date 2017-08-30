@@ -8,9 +8,9 @@ public class Constant {
     public static final String session="select * from (select count(SESSION_ID),to_char(sample_time,'RR-MON-DD hh24') from dba_hist_active_sess_history group by to_char(sample_time,'RR-MON-DD hh24') order by 1 desc) where rownum < 6";
     public static final String avtiveSession="select * from (select count(SESSION_ID),to_char(sample_time,'RR-MON-DD hh24') from dba_hist_active_sess_history group by to_char(sample_time,'RR-MON-DD hh24') order by 1 desc) where rownum < 6";
     public static final String sessionGroupUser="select username,count(username) from v$session where username is not null group by username";
-    public static final String memory="show parameter memory";
-    public static final String sga="show parameter sga" ;
-    public static final String pga="show parameter pga";
+    public static final String memory="select name ,value , display_value,DESCRIPTION from v$parameter where name like '%memory%'";
+    public static final String sga="select  name ,value , display_value,DESCRIPTION from v$parameter where name like '%sga%'" ;
+    public static final String pga="select name ,value , display_value,DESCRIPTION from v$parameter where name like '%pga%'";
     public static final String databaseName="select name from v$database";
     public static final String instanceName="select instance_name from gv$instance";
     public static final String version="select * from v$version";

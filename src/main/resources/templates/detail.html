@@ -2,35 +2,97 @@
 <head >
     <div th:include="fragment/head :: head"></div>
 </head>
-<body style="height: 100%">
-数据文件
-<div th:each="res:${datafile}" th:text="${res['GB']}"></div>
-数据文件
-<div th:each="res:${segment}" th:text="${res['GB']}"></div>
-数据库name
-<div th:each="res:${dataName}" th:text="${res['NAME']}"></div>
-实例名
-<div th:each="res:${instance}" th:text="${res['INSTANCE_NAME']}"></div>
-版本信息
-<div th:each="res:${version}" th:text="${res['BANNER']}"></div>
-dbid
-<div th:each="res:${dbid}" th:text="${res['DBID']}"></div>
-controlfile
-<div th:each="res:${controlfile}" th:text="${res['NAME']}"></div>
-字符集
-<div th:each="res:${chart}" th:text="${res['VALUE']}"></div>
-<div th:each="res:${nchart}" th:text="${res['VALUE']}"></div>
-日志
-<div th:each="res:${logSize}" th:text="${res['MB']}"></div>
-<div th:each="res:${logCount}" th:text="${res['COUNT(1)']}"></div>
+<body>
+<table  class="layui-table" >
+    <tr>
+        <td>数据文件</td>
+        <td><div th:each="res:${datafile}" th:text="${res['GB']}"></div></td>
+    </tr>
+    <tr>
+        <td>数据文件</td>
+        <td><div th:each="res:${segment}" th:text="${res['GB']}"></div></td>
+    </tr>
+    <tr>
+        <td>数据库name</td>
+        <td><div th:each="res:${dataName}" th:text="${res['NAME']}"></div></td>
+    </tr>
+    <tr>
+        <td>实例名</td>
+        <td><div th:each="res:${instance}" th:text="${res['INSTANCE_NAME']}"></div></td>
+    </tr>
+    <tr>
+        <td>版本信息</td>
+        <td><div th:each="res:${version}" th:text="${res['BANNER']}"></div></td>
+    </tr>
+    <tr>
+        <td>dbid</td>
+        <td><div th:each="res:${dbid}" th:text="${res['DBID']}"></div></td>
+    </tr>
+    <tr>
+        <td>控制文件</td>
+        <td><div th:each="res:${controlfile}" th:text="${res['NAME']}"></div></td>
+    </tr>
+    <tr>
+        <td>字符集</td>
+        <td><div th:each="res:${chart}" th:text="${res['VALUE']}"></div></td>
+    </tr>
+    <tr>
+        <td>国家字符集</td>
+        <td><div th:each="res:${nchart}" th:text="${res['VALUE']}"></div></td>
+    </tr>
+    <tr>
+        <td>日志大小</td>
+        <td><div th:each="res:${logSize}" th:text="${res['MB']}"></div></td>
+    </tr>
+    <tr>
+        <td>日志数量</td>
+        <td><div th:each="res:${logCount}" th:text="${res['COUNT(1)']}"></div></td>
+    </tr>
+    <tr>
+        <td>归档路径</td>
+        <td><div th:each="res:${archFile}" th:text="${res['VALUE']}"></div></td>
+    </tr>
+    <tr>
+        <td>SGA</td>
+        <td>
+            <div th:each="res:${sga}" >
+            <span th:text="${res['NAME']}"></span>
+            <span th:text="${res['DISPLAY_VALUE']}"></span>
+            <span th:text="${res['VALUE']}"></span>
+            <span th:text="${res['DESCRIPTION']}"></span>
+            </div>
+        </td>
+    </tr>
+    <tr>
+        <td>PGA</td>
+        <td>
+            <div th:each="res:${pga}" >
+                <p th:text="${res['NAME']}"></p>
+                <p th:text="${res['DISPLAY_VALUE']}"></p>
+                <p th:text="${res['VALUE']}"></p>
+                <p th:text="${res['DESCRIPTION']}"></p>
+            </div>
+        </td>
+    </tr>
+    <tr>
+        <td>内存</td>
+        <td>
+            <div th:each="res:${memory}" >
+            <p th:text="${res['NAME']}"></p>
+            <p th:text="${res['DISPLAY_VALUE']}"></p>
+            <p th:text="${res['VALUE']}"></p>
+            <p th:text="${res['DESCRIPTION']}"></p>
+        </div>
+        </td>
+    </tr>
+</table>
+
 <div th:each="res:${logMember}" th:text="${res['MEMBERS']}"></div>
 <div th:each="res:${logMode}" th:text="${res['LOG_MODE']}"></div>
 <!--<div th:each="res:${archLog}" th:text="${res}"></div>-->
-<div th:each="res:${archFile}" th:text="${res['VALUE']}">
 坏块
-</div><div th:each="res:${isBadBlock}" th:text="${res}"></div>
-
-
+<div th:each="res:${isBadBlock}" th:text="${res}"></div>
+内存
 <table class="layui-table">
     <thead>
         <tr>
