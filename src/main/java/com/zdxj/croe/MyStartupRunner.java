@@ -38,6 +38,8 @@ public class MyStartupRunner implements CommandLineRunner {
             d.setUserName(dbs[4]);
             d.setPasswd(dbs[5]);
             d.setId((Integer.parseInt(dbs[6])));
+            d.setSysUser(dbs[7]);
+            d.setSysPwd(dbs[8]);
             source.add(d);
         }
         System.out.print(JSON.toJSON(source));

@@ -8,8 +8,12 @@
                 <a href="javascript:;"><i class="fa fa-user"></i>日常巡检</a>
                 <dl class="layui-nav-child">
 
-                    <dd th:each="source:${datasource}"><a href="javascript:;"   th:attr="data-url='/cat/'+${source.id}" data-id="1" th:text="${source.name}" ></a></dd>
-                    <dd><a href="javascript:;" data-url="/user/manage" data-id="2">角色管理</a></dd>
+                    <dd th:each="source,iterStat:${datasource}">
+                        <a href="javascript:;"
+                            th:attr="data-url='/cat/'+${source.id},data-id=${iterStat.index+1}"
+                            th:text="${source.name}">
+                        </a>
+                    </dd>
                 </dl>
             </li>
             <li class="layui-nav-item">

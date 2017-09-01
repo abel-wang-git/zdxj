@@ -11,6 +11,24 @@ public class Datasoruce {
     private String sid;
     private String userName;
     private String passwd;
+    private String sysUser;
+    private String sysPwd;
+
+    public String getSysUser() {
+        return sysUser;
+    }
+
+    public void setSysUser(String sysUser) {
+        this.sysUser = sysUser;
+    }
+
+    public String getSysPwd() {
+        return sysPwd;
+    }
+
+    public void setSysPwd(String sysPwd) {
+        this.sysPwd = sysPwd;
+    }
 
     public String getSid() {
         return sid;

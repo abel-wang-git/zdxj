@@ -37,9 +37,11 @@ public class Dbconnect {
 
     public static List query(Connection connection,String sql) {
         List listOfRows = new ArrayList();
+        ResultSet res=null;
+        Statement s=null;
         try {
-            Statement s = connection.createStatement();
-            ResultSet res = s.executeQuery(sql);
+            s= connection.createStatement();
+            res= s.executeQuery(sql);
             ResultSetMetaData md = res.getMetaData();
             int num = md.getColumnCount();
             while (res.next()) {
@@ -51,6 +53,13 @@ public class Dbconnect {
             }
         } catch (SQLException e) {
             e.printStackTrace();
+        }finally {
+            try {
+                res.close();
+                s.close();
+            } catch (SQLException e) {
+                e.printStackTrace();
+            }
         }
         return listOfRows;
     }

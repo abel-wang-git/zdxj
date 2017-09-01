@@ -3,16 +3,14 @@ package com.zdxj.ctrl;
 import com.zdxj.Constant;
 import com.zdxj.croe.Dbconnect;
 import com.zdxj.croe.MyStartupRunner;
+import com.zdxj.croe.Shell;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 
 import java.sql.*;
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 
 @Controller
 public class Cat {
@@ -25,8 +23,16 @@ public class Cat {
     }
     @GetMapping(value = "/cat/{id}")
     public String Cat(@PathVariable int id,Model model){
-        Connection connect=Dbconnect.dbConnect(Dbconnect.getDataSource(id));
-        List datafile= Dbconnect.query(connect,Constant.datafile);
+        Connection connect=null;
+        List datafile=null;
+        try{
+            connect=Dbconnect.dbConnect(Dbconnect.getDataSource(id));
+            datafile= Dbconnect.query(connect,Constant.datafile);
+        }catch (Exception e){
+            e.printStackTrace();
+        }
+
+        Shell shell=new Shell(Dbconnect.getDataSource(id));
 
         model.addAttribute("datafile",datafile);
 
@@ -122,16 +128,17 @@ public class Cat {
 
         model.addAttribute("archFile",archFile);
 
-        List envnt = Dbconnect.query(connect,Constant.envnt);
+       // List envnt = Dbconnect.query(connect,Constant.envnt);
 
-        model.addAttribute("envnt",envnt);
+        //model.addAttribute("envnt",envnt);
 
         List isBadBlock = Dbconnect.query(connect,Constant.isBadBlock);
 
         model.addAttribute("isBadBlock",isBadBlock);
 
+        String mem=shell.exec(Constant.catMemory);
 
-
+        model.addAttribute("sysMem",mem);
 
         try {
             connect.close();
@@ -139,6 +146,10 @@ public class Cat {
             e.printStackTrace();
         }
         return "detail";
+    }
+
+    public void CatSys(){
+
     }
 
 }
