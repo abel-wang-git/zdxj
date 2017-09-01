@@ -1,6 +1,7 @@
 package com.zdxj.croe;
 
 import com.jcraft.jsch.*;
+import com.zdxj.Constant;
 import com.zdxj.po.Datasoruce;
 import com.zdxj.po.SysUserInfo;
 import org.slf4j.Logger;
@@ -33,14 +34,15 @@ public class Shell {
     public Shell(Datasoruce datasoruce){
         this.ipAddress=datasoruce.getIP();
         this.username=datasoruce.getSysUser();
-        this.password=datasoruce.getPasswd();
+        this.password=datasoruce.getSysPwd();
         stdout=new Vector<String>();
     }
 
-    public int execute(final String command) {
+    public String execute(final String command) {
         int returnCode = 0;
         JSch jsch = new JSch();
         SysUserInfo userInfo = new SysUserInfo();
+        StringBuffer str = new StringBuffer();
 
         try {
             // Create and connect session.
@@ -63,7 +65,7 @@ public class Shell {
             // Get the output of remote command.
             String line;
             while ((line = input.readLine()) != null) {
-                stdout.add(line);
+                str.append(line+'\n');
             }
             input.close();
 
@@ -80,25 +82,16 @@ public class Shell {
         } catch (Exception e) {
             e.printStackTrace();
         }
-        return returnCode;
+        return str.toString();
     }
 
     public Vector<String> getStandardOutput() {
         return stdout;
     }
 
-    public String exec(String command){
-        String retrun = "";
-        this.execute(command);
-        for (String str : this.stdout) {
-            retrun+=str;
-        }
-        return retrun;
-    }
-
     public static void main(final String [] args) {
         Shell sshExecutor = new Shell("192.168.1.110", "root", "123456");
-        String s=sshExecutor.exec("free | grep Mem |awk  '{print $3\",\"$2}'");
+        String s=sshExecutor.execute(Constant.disk);
         System.out.println(s);
 
     }

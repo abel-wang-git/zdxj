@@ -4,6 +4,8 @@ import com.zdxj.Constant;
 import com.zdxj.croe.Dbconnect;
 import com.zdxj.croe.MyStartupRunner;
 import com.zdxj.croe.Shell;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -14,7 +16,7 @@ import java.util.*;
 
 @Controller
 public class Cat {
-
+    private Logger logger = LoggerFactory.getLogger(this.getClass());
 
     @GetMapping(value = "/")
     public String toIndex(Model model){
@@ -120,10 +122,6 @@ public class Cat {
 
         model.addAttribute("logMode",logMode);
 
-//        List archLog = Dbconnect.query(connect,Constant.archLog);
-//
-//        model.addAttribute("archLog",archLog);
-
         List archFile = Dbconnect.query(connect,Constant.archFile);
 
         model.addAttribute("archFile",archFile);
@@ -136,9 +134,17 @@ public class Cat {
 
         model.addAttribute("isBadBlock",isBadBlock);
 
-        String mem=shell.exec(Constant.catMemory);
+        String mem=shell.execute(Constant.catMemory);
 
         model.addAttribute("sysMem",mem);
+
+        String cpu=shell.execute(Constant.catCpu);
+
+        model.addAttribute("cpu",cpu);
+
+        String disk = shell.execute(Constant.disk);
+
+        model.addAttribute("disk",disk.split("\n"));
 
         try {
             connect.close();

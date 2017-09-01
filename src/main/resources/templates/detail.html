@@ -3,6 +3,22 @@
     <div th:include="fragment/head :: head"></div>
 </head>
 <body>
+内存使用
+<div th:text="${#strings.setSplit(sysMem,',')[0]+'M'}"></div>|
+<div th:text="${#strings.setSplit(sysMem,',')[1]+'M'}"></div>|
+<div th:text="${#strings.setSplit(sysMem,',')[2]+'%'}"></div>
+
+CPU
+<div th:text="${cpu+'%'}"></div>
+
+硬盘
+<table  class="layui-table">
+    <tr th:each="d:${disk}">
+        <td th:each="a:${#strings.setSplit(d,',')}" th:text="${a}"> </td>
+    </tr>
+</table>
+
+
 <div class="site-title">
     <fieldset><legend><a name="nav">基本信息</a></legend></fieldset>
 </div>
