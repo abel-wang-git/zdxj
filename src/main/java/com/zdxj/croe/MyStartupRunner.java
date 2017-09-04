@@ -8,6 +8,7 @@ import org.springframework.stereotype.Component;
 import org.springframework.util.ResourceUtils;
 
 import java.io.BufferedReader;
+import java.io.File;
 import java.io.FileReader;
 import java.net.URL;
 import java.util.ArrayList;
@@ -22,11 +23,14 @@ import java.util.List;
 //@Order(value=2) 多个CommandLineRunner时 控制顺序
 public class MyStartupRunner implements CommandLineRunner {
     public static  final List<Datasoruce> source = new ArrayList<Datasoruce>();
+    public static  String conf=null;
 
     public void run(String... strings) throws Exception {
-        URL u=ResourceUtils.getURL("classpath:datasource.conf");
-        BufferedReader br = new BufferedReader(new FileReader( u.getFile()));
-        String s="";
+        String path = this.getClass().getProtectionDomain().getCodeSource().getLocation().getFile();
+        System.out.println(System.getProperty("java.class.path"));
+        File file = new File(path);
+        BufferedReader br = new BufferedReader(new FileReader(file.getParentFile().getParent()+System.getProperty("file.separator")+"datasource.conf"));
+        String s;
         while((s = br.readLine())!=null){//使用readLine方法，一次读一行
             String[] dbs=s.split(",");
 
