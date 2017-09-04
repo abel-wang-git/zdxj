@@ -3,6 +3,13 @@
     <div th:include="fragment/head :: head"></div>
 </head>
 <body>
+
+<div class="site-title" onclick="sysInfo(this)" th:attr="conid=${conid}">
+    <fieldset><legend><a name="nav">系统信息</a></legend></fieldset>
+</div>
+<div id = "sysInfo">
+
+</div>
 <div class="site-title">
     <fieldset><legend><a name="nav">基本信息</a></legend></fieldset>
 </div>
@@ -59,8 +66,8 @@
         <td>SGA</td>
         <td>
             <div th:each="res:${sga}" >
-            <span th:text="${res['NAME']}"></span>|
-            <span th:text="${res['DISPLAY_VALUE']}"></span>|
+            <span th:text="${res['NAME']}"></span>=
+            <span th:text="${res['DISPLAY_VALUE']}"></span>
            <!-- <span th:text="${res['VALUE']}"></span>|
             <span th:text="${res['DESCRIPTION']}"></span>|-->
             </div>
@@ -70,8 +77,8 @@
         <td>PGA</td>
         <td>
             <div th:each="res:${pga}" >
-                <span th:text="${res['NAME']}"></span>|
-                <span th:text="${res['DISPLAY_VALUE']}"></span>|
+                <span th:text="${res['NAME']}"></span>=
+                <span th:text="${res['DISPLAY_VALUE']}"></span>
                 <!-- <span th:text="${res['VALUE']}"></span>|
                  <span th:text="${res['DESCRIPTION']}"></span>|-->
             </div>
@@ -259,4 +266,9 @@
   </table>
 
   </body>
+<script th:inline="javascript">
+    function sysInfo(thiz) {
+        $("#sysInfo").load("/sys/"+$(thiz).attr("conid"))
+    }
+</script>
   </html>

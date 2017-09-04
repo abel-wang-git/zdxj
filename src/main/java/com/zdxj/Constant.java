@@ -31,7 +31,7 @@ public class Constant {
     public static final String instanceStatus="select status from v$instance";
 
     //系统
-    public static final String lsnrctl="lsnrctl status ";
+//    public static final String lsnrctl="lsnrctl status";
     public static final String catMemory="free -m | grep Mem |awk  '{printf(\"%s,%s,%.2f\",$3,$2,$3/$2*100)}'";
     public static final String catCpu="vmstat |awk 'NR==3{print $15}'";
     public static final String disk= "df -P| awk '{print $1\",\"$2\",\"$3\",\"$4\",\"$5\",\"$6}'";
