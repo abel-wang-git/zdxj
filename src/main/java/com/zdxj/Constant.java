@@ -28,7 +28,11 @@ public class Constant {
     public static final String archFile="select value from v$parameter where name = 'log_archive_dest_1'";
     public static final String envnt="select * from (select event,time_waited_fg/1048576 from v$system_event order by time_waited_fg desc) where rownum < 11";
     public static final String isBadBlock="select * from v$database_block_corruption";
+    public static final String instanceStatus="select status from v$instance";
+
+    //系统
+    public static final String lsnrctl="lsnrctl status ";
     public static final String catMemory="free -m | grep Mem |awk  '{printf(\"%s,%s,%.2f\",$3,$2,$3/$2*100)}'";
     public static final String catCpu="vmstat |awk 'NR==3{print $15}'";
-    public static final String disk= "df | awk 'BEGIN{print \"文件系统,总大小,已用,可用,百分比,挂载点\",OFS=\",\"}NR>1{print $1,$2,$3,$4,$5,$6}'";
+    public static final String disk= "df -P| awk '{print $1\",\"$2\",\"$3\",\"$4\",\"$5\",\"$6}'";
 }

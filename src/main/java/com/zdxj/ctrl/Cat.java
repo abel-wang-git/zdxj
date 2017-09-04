@@ -30,12 +30,6 @@ public class Cat {
         try{
             connect=Dbconnect.dbConnect(Dbconnect.getDataSource(id));
             datafile= Dbconnect.query(connect,Constant.datafile);
-        }catch (Exception e){
-            e.printStackTrace();
-        }
-
-        Shell shell=new Shell(Dbconnect.getDataSource(id));
-
         model.addAttribute("datafile",datafile);
 
         List segment = Dbconnect.query(connect,Constant.segment);
@@ -134,6 +128,27 @@ public class Cat {
 
         model.addAttribute("isBadBlock",isBadBlock);
 
+        List instancestat= Dbconnect.query(connect,Constant.instanceStatus);
+
+        model.addAttribute("instat",instance);
+
+        }catch (Exception e){
+            e.printStackTrace();
+            logger.error("数据库链接失败");
+        }finally {
+            try {
+                connect.close();
+            } catch (SQLException e) {
+                e.printStackTrace();
+            }
+        }
+
+        return "detail";
+    }
+    @GetMapping(value = "/sys/{id}")
+    public String CatSys(@PathVariable int id,Model model){
+
+        Shell shell=new Shell(Dbconnect.getDataSource(id));
         String mem=shell.execute(Constant.catMemory);
 
         model.addAttribute("sysMem",mem);
@@ -143,19 +158,18 @@ public class Cat {
         model.addAttribute("cpu",cpu);
 
         String disk = shell.execute(Constant.disk);
-
-        model.addAttribute("disk",disk.split("\n"));
-
-        try {
-            connect.close();
-        } catch (SQLException e) {
-            e.printStackTrace();
+        List<String> str=Arrays.asList(disk.split("\n"));
+        List<String[]> dis=new ArrayList<String[]>();
+        for (int i = 0;i<str.size();i++) {
+            dis.add(str.get(i).split(","));
         }
-        return "detail";
-    }
+        model.addAttribute("disk",dis);
 
-    public void CatSys(){
+        String lsnrstat=shell.execute(Constant.lsnrctl);
 
+        model.addAttribute("lsnrstat",lsnrstat);
+
+        return "sysDetail";
     }
 
 }

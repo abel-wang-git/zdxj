@@ -1,0 +1,29 @@
+<html xmlns:th="http://www.thymeleaf.org" style="height: 100%">
+<head >
+    <div th:include="fragment/head :: head"></div>
+</head>
+<body>
+<table  class="layui-table">
+    <tr>
+        <td>内存使用</td>
+        <td th:text="${#strings.setSplit(sysMem,',')[0]+'M'}"></td>
+        <td th:text="${#strings.setSplit(sysMem,',')[1]+'M'}"></td>
+        <td th:text="${#strings.setSplit(sysMem,',')[2]+'%'}"></td>
+    </tr>
+
+    <tr>
+        <td>CPU</td>
+        <td th:text="${cpu+'%'}"></td>
+    </tr>
+    <tr>
+        <td th:text="${lsnrstat}"></td>
+    </tr>
+</table>
+硬盘
+<table  class="layui-table">
+    <tr th:each="d:${disk}">
+        <td th:each="a:${d}" th:text="${a}"> </td>
+    </tr>
+</table>
+</body>
+</html>
