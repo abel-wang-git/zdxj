@@ -26,10 +26,7 @@ public class MyStartupRunner implements CommandLineRunner {
     public static  String conf=null;
 
     public void run(String... strings) throws Exception {
-        String path = this.getClass().getProtectionDomain().getCodeSource().getLocation().getFile();
-        System.out.println(System.getProperty("java.class.path"));
-        File file = new File(path);
-        BufferedReader br = new BufferedReader(new FileReader(file.getParentFile().getParent()+System.getProperty("file.separator")+"datasource.conf"));
+        BufferedReader br = new BufferedReader(new FileReader(System.getProperty("user.dir")+System.getProperty("file.separator")+"datasource.conf"));
         String s;
         while((s = br.readLine())!=null){//使用readLine方法，一次读一行
             String[] dbs=s.split(",");
