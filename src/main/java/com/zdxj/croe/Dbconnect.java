@@ -10,21 +10,13 @@ import java.util.List;
 import java.util.Map;
 
 public class Dbconnect {
-    public static Connection dbConnect(Datasoruce datasoruce) {
+    public static Connection dbConnect(Datasoruce datasoruce) throws ClassNotFoundException, SQLException {
 
-        //初始化驱动包
-        try {
             Class.forName("oracle.jdbc.driver.OracleDriver");
             //根据数据库连接字符，名称，密码给conn赋值
             return DriverManager.getConnection("jdbc:oracle:thin:@" + datasoruce.getIP() + ":" + datasoruce.getProt() + ":" + datasoruce.getSid()
                     , datasoruce.getUserName(), datasoruce.getPasswd());
-        } catch (ClassNotFoundException e) {
-            e.printStackTrace();
-            return null;
-        } catch (SQLException e) {
-            e.printStackTrace();
-            return null;
-        }
+
     }
 
     public static Datasoruce getDataSource(int id) {

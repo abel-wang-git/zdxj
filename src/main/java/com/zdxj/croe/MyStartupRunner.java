@@ -7,9 +7,7 @@ import org.springframework.boot.CommandLineRunner;
 import org.springframework.stereotype.Component;
 import org.springframework.util.ResourceUtils;
 
-import java.io.BufferedReader;
-import java.io.File;
-import java.io.FileReader;
+import java.io.*;
 import java.net.URL;
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -26,7 +24,7 @@ public class MyStartupRunner implements CommandLineRunner {
     public static  String conf=null;
 
     public void run(String... strings) throws Exception {
-        BufferedReader br = new BufferedReader(new FileReader(System.getProperty("user.dir")+System.getProperty("file.separator")+"datasource.conf"));
+        BufferedReader br = new BufferedReader(new InputStreamReader(new FileInputStream(System.getProperty("user.dir")+System.getProperty("file.separator")+"datasource.conf"),"UTF-8"));
         String s;
         while((s = br.readLine())!=null){//使用readLine方法，一次读一行
             String[] dbs=s.split(",");
