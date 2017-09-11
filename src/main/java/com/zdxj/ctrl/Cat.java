@@ -30,36 +30,98 @@ public class Cat {
     @GetMapping(value = "/cat/{id}")
     public String Cat(@PathVariable int id, Model model) {
         Connection connect = null;
-        List datafile = null;
         model.addAttribute("conid",id);
         try {
             connect = Dbconnect.dbConnect(Dbconnect.getDataSource(id));
-            datafile = Dbconnect.query(connect, Constant.datafile);
+            List tablespace = Dbconnect.query(connect, Constant.tablespace);
+
+            model.addAttribute("tablespace", tablespace);
+
+            List psu = Dbconnect.query(connect, Constant.psu);
+
+            model.addAttribute("psu", psu);
+
+
+
+            List resourceLimit = Dbconnect.query(connect, Constant.resourceLimit);
+
+            model.addAttribute("resourceLimit", resourceLimit);
+
+
+            List envnt = Dbconnect.query(connect,Constant.envnt);
+
+            model.addAttribute("envnt",envnt);
+
+            List isBadBlock = Dbconnect.query(connect, Constant.isBadBlock);
+
+            model.addAttribute("isBadBlock", isBadBlock);
+        } catch (Exception e) {
+            e.printStackTrace();
+            logger.error("数据库链接失败");
+            return "error";
+        } finally {
+            try {
+                connect.close();
+            } catch (SQLException e) {
+                e.printStackTrace();
+            }
+        }
+
+        return "detail";
+    }
+
+    @GetMapping(value = "/sys/{id}")
+    public String CatSys(@PathVariable int id, Model model) {
+        Connection connect = null;
+        try {
+            connect = Dbconnect.dbConnect(Dbconnect.getDataSource(id));
+            List instancestat = Dbconnect.query(connect, Constant.instanceStatus);
+
+            model.addAttribute("instat", instancestat);
+        }catch (Exception e){
+            e.printStackTrace();
+        }finally {
+            try {
+                connect.close();
+            } catch (SQLException e) {
+                e.printStackTrace();
+            }
+        }
+        Shell shell = new Shell(Dbconnect.getDataSource(id));
+        String mem = shell.execute(Constant.catMemory);
+
+        model.addAttribute("sysMem", mem);
+
+        String cpu = shell.execute(Constant.catCpu);
+
+        model.addAttribute("cpu", cpu);
+
+        String disk = shell.execute(Constant.disk);
+        List<String> str = Arrays.asList(disk.split("\n"));
+        List<String[]> dis = new ArrayList<String[]>();
+        for (int i = 0; i < str.size(); i++) {
+            dis.add(str.get(i).split(","));
+        }
+        model.addAttribute("disk", dis);
+
+        String lsnrstat = shell.execute(Constant.lsnrctl);
+
+        model.addAttribute("lsnrstat",(lsnrstat==null||lsnrstat.trim().equals(""))?"stop":"start");
+        return "sysDetail";
+    }
+
+    @GetMapping(value = "/base/{id}")
+    public String catBase(@PathVariable int id, Model model){
+        Connection connect = null;
+        model.addAttribute("conid",id);
+        try {
+            connect = Dbconnect.dbConnect(Dbconnect.getDataSource(id));
+            List datafile = Dbconnect.query(connect, Constant.datafile);
             model.addAttribute("datafile", datafile);
 
             List segment = Dbconnect.query(connect, Constant.segment);
 
             model.addAttribute("segment", segment);
-
-            List tablespace = Dbconnect.query(connect, Constant.tablespace);
-
-            model.addAttribute("tablespace", tablespace);
-
-            List session = Dbconnect.query(connect, Constant.session);
-
-            model.addAttribute("sessiondb", session);
-
-            List avticeSession = Dbconnect.query(connect, Constant.avtiveSession);
-
-            model.addAttribute("avticese", avticeSession);
-
-            List sessionGroupUser = Dbconnect.query(connect, Constant.sessionGroupUser);
-
-            model.addAttribute("sessGrop", sessionGroupUser);
-
-            List memory = Dbconnect.query(connect, Constant.memory);
-
-            model.addAttribute("memory", memory);
 
             List sga = Dbconnect.query(connect, Constant.sga);
 
@@ -80,10 +142,21 @@ public class Cat {
             List version = Dbconnect.query(connect, Constant.version);
 
             model.addAttribute("version", version);
+            List session = Dbconnect.query(connect, Constant.session);
 
-            List psu = Dbconnect.query(connect, Constant.psu);
+            model.addAttribute("sessiondb", session);
 
-            model.addAttribute("psu", psu);
+            List avticeSession = Dbconnect.query(connect, Constant.avtiveSession);
+
+            model.addAttribute("avticese", avticeSession);
+
+            List sessionGroupUser = Dbconnect.query(connect, Constant.sessionGroupUser);
+
+            model.addAttribute("sessGrop", sessionGroupUser);
+
+            List memory = Dbconnect.query(connect, Constant.memory);
+
+            model.addAttribute("memory", memory);
 
             List dbid = Dbconnect.query(connect, Constant.dbid);
 
@@ -92,10 +165,6 @@ public class Cat {
             List contronfile = Dbconnect.query(connect, Constant.controlfile);
 
             model.addAttribute("controlfile", contronfile);
-
-            List resourceLimit = Dbconnect.query(connect, Constant.resourceLimit);
-
-            model.addAttribute("resourceLimit", resourceLimit);
 
             List chart = Dbconnect.query(connect, Constant.cahrt);
 
@@ -125,58 +194,14 @@ public class Cat {
 
             model.addAttribute("archFile", archFile);
 
-            List envnt = Dbconnect.query(connect,Constant.envnt);
-
-            model.addAttribute("envnt",envnt);
-
-            List isBadBlock = Dbconnect.query(connect, Constant.isBadBlock);
-
-            model.addAttribute("isBadBlock", isBadBlock);
-
-            List instancestat = Dbconnect.query(connect, Constant.instanceStatus);
-
-            model.addAttribute("instat", instance);
-
-        } catch (Exception e) {
-            e.printStackTrace();
-            logger.error("数据库链接失败");
-            return "error";
-        } finally {
+        }catch (Exception e){}finally {
             try {
                 connect.close();
             } catch (SQLException e) {
-                e.printStackTrace();
+
             }
         }
-
-        return "detail";
-    }
-
-    @GetMapping(value = "/sys/{id}")
-    public String CatSys(@PathVariable int id, Model model) {
-
-        Shell shell = new Shell(Dbconnect.getDataSource(id));
-        String mem = shell.execute(Constant.catMemory);
-
-        model.addAttribute("sysMem", mem);
-
-        String cpu = shell.execute(Constant.catCpu);
-
-        model.addAttribute("cpu", cpu);
-
-        String disk = shell.execute(Constant.disk);
-        List<String> str = Arrays.asList(disk.split("\n"));
-        List<String[]> dis = new ArrayList<String[]>();
-        for (int i = 0; i < str.size(); i++) {
-            dis.add(str.get(i).split(","));
-        }
-        model.addAttribute("disk", dis);
-
-//        String lsnrstat = shell.execute(Constant.lsnrctl);
-//
-//        model.addAttribute("lsnrstat", lsnrstat);
-
-        return "sysDetail";
+        return "baseInfo";
     }
 
 }

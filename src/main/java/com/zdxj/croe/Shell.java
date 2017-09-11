@@ -49,10 +49,15 @@ public class Shell {
             Session session = jsch.getSession(username, ipAddress, DEFAULT_SSH_PORT);
             session.setPassword(password);
             session.setUserInfo(userInfo);
+            session.setConfig("userauth.gssapi-with-mic", "no");
+            session.setConfig("StrictHostKeyChecking", "no");
             session.connect();
 
             // Create and connect channel.
             Channel channel = session.openChannel("exec");
+            ((ChannelExec) channel).setEnv("ORACLE_BASE","/u01/app/oracle");
+            ((ChannelExec) channel).setEnv("PATH","$PATH:$ORACLE_HOME/bin");
+            ((ChannelExec) channel).setEnv("ORACLE_HOME","/u01/app/oracle/product/11.2.0/dbhome_1");
             ((ChannelExec) channel).setCommand(command);
 
             channel.setInputStream(null);
@@ -67,6 +72,7 @@ public class Shell {
             while ((line = input.readLine()) != null) {
                 str.append(line+'\n');
             }
+
             input.close();
 
             // Get the return code only after the channel is closed.
@@ -90,8 +96,8 @@ public class Shell {
     }
 
     public static void main(final String [] args) {
-        Shell sshExecutor = new Shell("192.168.1.110", "root", "123456");
-        String s=sshExecutor.execute(Constant.disk);
+        Shell sshExecutor = new Shell("192.168.88.33", "oracle", "123456");
+        String s=sshExecutor.execute("source /home/oracle/.bash_profile && lsnrctl status | grep Start");
         System.out.println(s);
 
     }

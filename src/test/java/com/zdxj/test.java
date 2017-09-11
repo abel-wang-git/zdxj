@@ -4,8 +4,13 @@ import com.zdxj.croe.Dbconnect;
 import com.zdxj.po.Datasoruce;
 import org.junit.Test;
 
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
 import java.sql.*;
+import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 /**
@@ -20,7 +25,14 @@ public class test {
         d.setProt("1521");
         d.setUserName("system");
         d.setPasswd("123456");
-        Connection c=Dbconnect.dbConnect(d);
+        Connection c= null;
+        try {
+            c = Dbconnect.dbConnect(d);
+        } catch (ClassNotFoundException e) {
+            e.printStackTrace();
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
 
         try {
             Statement s = c.createStatement();
@@ -38,6 +50,27 @@ public class test {
             }
         } catch (SQLException e) {
             e.printStackTrace();
+        }
+    }
+
+    @Test
+    public  void test1(){
+        Process process = null;
+        List<String> processList = new ArrayList<String>();
+        try {
+            process = Runtime.getRuntime().exec("ps -aux");
+            BufferedReader input = new BufferedReader(new InputStreamReader(process.getInputStream()));
+            String line = "";
+            while ((line = input.readLine()) != null) {
+                processList.add(line);
+            }
+            input.close();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+
+        for (String line : processList) {
+            System.out.println(line);
         }
     }
 }
