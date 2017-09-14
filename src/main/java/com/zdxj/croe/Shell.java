@@ -83,10 +83,8 @@ public class Shell {
             // Disconnect the channel and session.
             channel.disconnect();
             session.disconnect();
-        } catch (JSchException e) {
-            e.printStackTrace();
         } catch (Exception e) {
-            e.printStackTrace();
+            logger.error(Util.getMessage(e));
         }
         return str.toString();
     }

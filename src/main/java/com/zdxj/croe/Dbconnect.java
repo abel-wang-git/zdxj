@@ -2,6 +2,8 @@ package com.zdxj.croe;
 
 import com.zdxj.Constant;
 import com.zdxj.po.Datasoruce;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import java.sql.*;
 import java.util.ArrayList;
@@ -10,6 +12,7 @@ import java.util.List;
 import java.util.Map;
 
 public class Dbconnect {
+
     public static Connection dbConnect(Datasoruce datasoruce) throws ClassNotFoundException, SQLException {
 
             Class.forName("oracle.jdbc.driver.OracleDriver");
@@ -27,31 +30,20 @@ public class Dbconnect {
         return datasoruce;
     }
 
-    public static List query(Connection connection,String sql) {
+    public static List query(Connection connection,String sql) throws SQLException {
         List listOfRows = new ArrayList();
         ResultSet res=null;
         Statement s=null;
-        try {
-            s= connection.createStatement();
-            res= s.executeQuery(sql);
-            ResultSetMetaData md = res.getMetaData();
-            int num = md.getColumnCount();
-            while (res.next()) {
-                Map mapOfColValues = new HashMap(num);
-                for (int i = 1; i <= num; i++) {
-                    mapOfColValues.put(md.getColumnName(i), res.getObject(i));
-                }
-                listOfRows.add(mapOfColValues);
+        s= connection.createStatement();
+        res= s.executeQuery(sql);
+        ResultSetMetaData md = res.getMetaData();
+        int num = md.getColumnCount();
+        while (res.next()) {
+            Map mapOfColValues = new HashMap(num);
+            for (int i = 1; i <= num; i++) {
+                mapOfColValues.put(md.getColumnName(i), res.getObject(i));
             }
-        } catch (SQLException e) {
-            e.printStackTrace();
-        }finally {
-            try {
-                res.close();
-                s.close();
-            } catch (SQLException e) {
-                e.printStackTrace();
-            }
+            listOfRows.add(mapOfColValues);
         }
         return listOfRows;
     }

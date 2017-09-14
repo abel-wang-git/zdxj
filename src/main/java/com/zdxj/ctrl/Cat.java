@@ -4,6 +4,7 @@ import com.zdxj.Constant;
 import com.zdxj.croe.Dbconnect;
 import com.zdxj.croe.MyStartupRunner;
 import com.zdxj.croe.Shell;
+import com.zdxj.croe.Util;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Controller;
@@ -41,8 +42,6 @@ public class Cat {
 
             model.addAttribute("psu", psu);
 
-
-
             List resourceLimit = Dbconnect.query(connect, Constant.resourceLimit);
 
             model.addAttribute("resourceLimit", resourceLimit);
@@ -56,14 +55,14 @@ public class Cat {
 
             model.addAttribute("isBadBlock", isBadBlock);
         } catch (Exception e) {
-            e.printStackTrace();
+            logger.error(Util.getMessage(e));
             logger.error("数据库链接失败");
             return "error";
         } finally {
             try {
                 connect.close();
             } catch (SQLException e) {
-                e.printStackTrace();
+                logger.error(Util.getMessage(e));
             }
         }
 
@@ -194,11 +193,13 @@ public class Cat {
 
             model.addAttribute("archFile", archFile);
 
-        }catch (Exception e){}finally {
+        }catch (Exception e){
+            logger.error(Util.getMessage(e));
+        }finally {
             try {
                 connect.close();
             } catch (SQLException e) {
-
+                logger.error(Util.getMessage(e));
             }
         }
         return "baseInfo";
