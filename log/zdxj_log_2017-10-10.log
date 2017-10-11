@@ -1,0 +1,322 @@
+[34m
+2017-10-10 10:22:34[0;39m | [34mINFO [0;39m | [33mrestartedMain[0;39m | [35mcom.zdxj.App[0;39m  [36m
+Starting App on w with PID 8313 (/home/w/IdeaProjects/zdxj/target/classes started by w in /home/w/IdeaProjects/zdxj)[0;39m[34m
+2017-10-10 10:22:34[0;39m | [34mINFO [0;39m | [33mrestartedMain[0;39m | [35mcom.zdxj.App[0;39m  [36m
+No active profile set, falling back to default profiles: default[0;39m[34m
+2017-10-10 10:22:35[0;39m | [34mINFO [0;39m | [33mrestartedMain[0;39m | [35morg.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext[0;39m  [36m
+Refreshing org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@5bbf3ce8: startup date [Tue Oct 10 10:22:35 CST 2017]; root of context hierarchy[0;39m[34m
+2017-10-10 10:22:35[0;39m | [34mINFO [0;39m | [33mbackground-preinit[0;39m | [35morg.hibernate.validator.internal.util.Version[0;39m  [36m
+HV000001: Hibernate Validator 5.3.4.Final[0;39m[34m
+2017-10-10 10:22:38[0;39m | [34mINFO [0;39m | [33mrestartedMain[0;39m | [35morg.springframework.context.support.PostProcessorRegistrationDelegate$BeanPostProcessorChecker[0;39m  [36m
+Bean 'org.springframework.boot.autoconfigure.validation.ValidationAutoConfiguration' of type [class org.springframework.boot.autoconfigure.validation.ValidationAutoConfiguration] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)[0;39m[34m
+2017-10-10 10:22:38[0;39m | [34mINFO [0;39m | [33mrestartedMain[0;39m | [35morg.springframework.context.support.PostProcessorRegistrationDelegate$BeanPostProcessorChecker[0;39m  [36m
+Bean 'validator' of type [class org.springframework.validation.beanvalidation.LocalValidatorFactoryBean] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)[0;39m[34m
+2017-10-10 10:22:39[0;39m | [34mINFO [0;39m | [33mrestartedMain[0;39m | [35morg.springframework.boot.context.embedded.tomcat.TomcatEmbeddedServletContainer[0;39m  [36m
+Tomcat initialized with port(s): 8080 (http)[0;39m[34m
+2017-10-10 10:22:39[0;39m | [34mINFO [0;39m | [33mrestartedMain[0;39m | [35morg.apache.catalina.core.StandardService[0;39m  [36m
+Starting service Tomcat[0;39m[34m
+2017-10-10 10:22:39[0;39m | [34mINFO [0;39m | [33mrestartedMain[0;39m | [35morg.apache.catalina.core.StandardEngine[0;39m  [36m
+Starting Servlet Engine: Apache Tomcat/8.5.11[0;39m[34m
+2017-10-10 10:22:39[0;39m | [34mINFO [0;39m | [33mlocalhost-startStop-1[0;39m | [35morg.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/][0;39m  [36m
+Initializing Spring embedded WebApplicationContext[0;39m[34m
+2017-10-10 10:22:39[0;39m | [34mINFO [0;39m | [33mlocalhost-startStop-1[0;39m | [35morg.springframework.web.context.ContextLoader[0;39m  [36m
+Root WebApplicationContext: initialization completed in 3899 ms[0;39m[34m
+2017-10-10 10:22:39[0;39m | [34mINFO [0;39m | [33mlocalhost-startStop-1[0;39m | [35morg.springframework.boot.web.servlet.ServletRegistrationBean[0;39m  [36m
+Mapping servlet: 'dispatcherServlet' to [/][0;39m[34m
+2017-10-10 10:22:39[0;39m | [34mINFO [0;39m | [33mlocalhost-startStop-1[0;39m | [35morg.springframework.boot.web.servlet.FilterRegistrationBean[0;39m  [36m
+Mapping filter: 'characterEncodingFilter' to: [/*][0;39m[34m
+2017-10-10 10:22:39[0;39m | [34mINFO [0;39m | [33mlocalhost-startStop-1[0;39m | [35morg.springframework.boot.web.servlet.FilterRegistrationBean[0;39m  [36m
+Mapping filter: 'hiddenHttpMethodFilter' to: [/*][0;39m[34m
+2017-10-10 10:22:39[0;39m | [34mINFO [0;39m | [33mlocalhost-startStop-1[0;39m | [35morg.springframework.boot.web.servlet.FilterRegistrationBean[0;39m  [36m
+Mapping filter: 'httpPutFormContentFilter' to: [/*][0;39m[34m
+2017-10-10 10:22:39[0;39m | [34mINFO [0;39m | [33mlocalhost-startStop-1[0;39m | [35morg.springframework.boot.web.servlet.FilterRegistrationBean[0;39m  [36m
+Mapping filter: 'requestContextFilter' to: [/*][0;39m[34m
+2017-10-10 10:22:40[0;39m | [34mINFO [0;39m | [33mrestartedMain[0;39m | [35morg.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter[0;39m  [36m
+Looking for @ControllerAdvice: org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@5bbf3ce8: startup date [Tue Oct 10 10:22:35 CST 2017]; root of context hierarchy[0;39m[34m
+2017-10-10 10:22:40[0;39m | [34mINFO [0;39m | [33mrestartedMain[0;39m | [35morg.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping[0;39m  [36m
+Mapped "{[/],methods=[GET]}" onto public java.lang.String com.zdxj.ctrl.Cat.toIndex(org.springframework.ui.Model)[0;39m[34m
+2017-10-10 10:22:40[0;39m | [34mINFO [0;39m | [33mrestartedMain[0;39m | [35morg.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping[0;39m  [36m
+Mapped "{[/cat/{id}],methods=[GET]}" onto public java.lang.String com.zdxj.ctrl.Cat.Cat(int,org.springframework.ui.Model)[0;39m[34m
+2017-10-10 10:22:40[0;39m | [34mINFO [0;39m | [33mrestartedMain[0;39m | [35morg.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping[0;39m  [36m
+Mapped "{[/sys/{id}],methods=[GET]}" onto public java.lang.String com.zdxj.ctrl.Cat.CatSys(int,org.springframework.ui.Model)[0;39m[34m
+2017-10-10 10:22:40[0;39m | [34mINFO [0;39m | [33mrestartedMain[0;39m | [35morg.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping[0;39m  [36m
+Mapped "{[/base/{id}],methods=[GET]}" onto public java.lang.String com.zdxj.ctrl.Cat.catBase(int,org.springframework.ui.Model)[0;39m[34m
+2017-10-10 10:22:40[0;39m | [34mINFO [0;39m | [33mrestartedMain[0;39m | [35morg.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping[0;39m  [36m
+Mapped "{[/error],produces=[text/html]}" onto public org.springframework.web.servlet.ModelAndView org.springframework.boot.autoconfigure.web.BasicErrorController.errorHtml(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse)[0;39m[34m
+2017-10-10 10:22:40[0;39m | [34mINFO [0;39m | [33mrestartedMain[0;39m | [35morg.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping[0;39m  [36m
+Mapped "{[/error]}" onto public org.springframework.http.ResponseEntity<java.util.Map<java.lang.String, java.lang.Object>> org.springframework.boot.autoconfigure.web.BasicErrorController.error(javax.servlet.http.HttpServletRequest)[0;39m[34m
+2017-10-10 10:22:40[0;39m | [34mINFO [0;39m | [33mrestartedMain[0;39m | [35morg.springframework.web.servlet.handler.SimpleUrlHandlerMapping[0;39m  [36m
+Mapped URL path [/webjars/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler][0;39m[34m
+2017-10-10 10:22:40[0;39m | [34mINFO [0;39m | [33mrestartedMain[0;39m | [35morg.springframework.web.servlet.handler.SimpleUrlHandlerMapping[0;39m  [36m
+Mapped URL path [/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler][0;39m[34m
+2017-10-10 10:22:40[0;39m | [34mINFO [0;39m | [33mrestartedMain[0;39m | [35morg.springframework.web.servlet.handler.SimpleUrlHandlerMapping[0;39m  [36m
+Mapped URL path [/**/favicon.ico] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler][0;39m[34m
+2017-10-10 10:22:41[0;39m | [34mINFO [0;39m | [33mrestartedMain[0;39m | [35morg.springframework.boot.devtools.autoconfigure.OptionalLiveReloadServer[0;39m  [36m
+LiveReload server is running on port 35729[0;39m[34m
+2017-10-10 10:22:41[0;39m | [34mINFO [0;39m | [33mrestartedMain[0;39m | [35morg.springframework.jmx.export.annotation.AnnotationMBeanExporter[0;39m  [36m
+Registering beans for JMX exposure on startup[0;39m[34m
+2017-10-10 10:22:41[0;39m | [34mINFO [0;39m | [33mrestartedMain[0;39m | [35morg.apache.coyote.http11.Http11NioProtocol[0;39m  [36m
+Initializing ProtocolHandler ["http-nio-8080"][0;39m[34m
+2017-10-10 10:22:41[0;39m | [34mINFO [0;39m | [33mrestartedMain[0;39m | [35morg.apache.coyote.http11.Http11NioProtocol[0;39m  [36m
+Starting ProtocolHandler [http-nio-8080][0;39m[34m
+2017-10-10 10:22:41[0;39m | [34mINFO [0;39m | [33mrestartedMain[0;39m | [35morg.apache.tomcat.util.net.NioSelectorPool[0;39m  [36m
+Using a shared selector for servlet write/read[0;39m[34m
+2017-10-10 10:22:41[0;39m | [34mINFO [0;39m | [33mrestartedMain[0;39m | [35morg.springframework.boot.context.embedded.tomcat.TomcatEmbeddedServletContainer[0;39m  [36m
+Tomcat started on port(s): 8080 (http)[0;39m[34m
+2017-10-10 10:22:41[0;39m | [34mINFO [0;39m | [33mrestartedMain[0;39m | [35mcom.zdxj.App[0;39m  [36m
+Started App in 8.334 seconds (JVM running for 11.781)[0;39m[34m
+2017-10-10 10:23:02[0;39m | [34mINFO [0;39m | [33mhttp-nio-8080-exec-1[0;39m | [35morg.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/][0;39m  [36m
+Initializing Spring FrameworkServlet 'dispatcherServlet'[0;39m[34m
+2017-10-10 10:23:02[0;39m | [34mINFO [0;39m | [33mhttp-nio-8080-exec-1[0;39m | [35morg.springframework.web.servlet.DispatcherServlet[0;39m  [36m
+FrameworkServlet 'dispatcherServlet': initialization started[0;39m[34m
+2017-10-10 10:23:02[0;39m | [34mINFO [0;39m | [33mhttp-nio-8080-exec-1[0;39m | [35morg.springframework.web.servlet.DispatcherServlet[0;39m  [36m
+FrameworkServlet 'dispatcherServlet': initialization completed in 18 ms[0;39m[34m
+2017-10-10 10:23:02[0;39m | [34mINFO [0;39m | [33mhttp-nio-8080-exec-1[0;39m | [35morg.thymeleaf.TemplateEngine[0;39m  [36m
+[THYMELEAF] INITIALIZING TEMPLATE ENGINE[0;39m[34m
+2017-10-10 10:23:02[0;39m | [34mINFO [0;39m | [33mhttp-nio-8080-exec-1[0;39m | [35morg.thymeleaf.templateresolver.AbstractTemplateResolver[0;39m  [36m
+[THYMELEAF] INITIALIZING TEMPLATE RESOLVER: org.thymeleaf.spring4.templateresolver.SpringResourceTemplateResolver[0;39m[34m
+2017-10-10 10:23:02[0;39m | [34mINFO [0;39m | [33mhttp-nio-8080-exec-1[0;39m | [35morg.thymeleaf.templateresolver.AbstractTemplateResolver[0;39m  [36m
+[THYMELEAF] TEMPLATE RESOLVER INITIALIZED OK[0;39m[34m
+2017-10-10 10:23:02[0;39m | [34mINFO [0;39m | [33mhttp-nio-8080-exec-1[0;39m | [35morg.thymeleaf.messageresolver.AbstractMessageResolver[0;39m  [36m
+[THYMELEAF] INITIALIZING MESSAGE RESOLVER: org.thymeleaf.spring4.messageresolver.SpringMessageResolver[0;39m[34m
+2017-10-10 10:23:02[0;39m | [34mINFO [0;39m | [33mhttp-nio-8080-exec-1[0;39m | [35morg.thymeleaf.messageresolver.AbstractMessageResolver[0;39m  [36m
+[THYMELEAF] MESSAGE RESOLVER INITIALIZED OK[0;39m[34m
+2017-10-10 10:23:02[0;39m | [34mINFO [0;39m | [33mhttp-nio-8080-exec-1[0;39m | [35morg.thymeleaf.TemplateEngine.CONFIG[0;39m  [36m
+[THYMELEAF] TEMPLATE ENGINE CONFIGURATION:
+[THYMELEAF] * Cache Factory implementation: org.thymeleaf.cache.StandardCacheManager
+[THYMELEAF] * Template modes:
+[THYMELEAF]     * XHTML
+[THYMELEAF]     * VALIDXHTML
+[THYMELEAF]     * XML
+[THYMELEAF]     * HTML5
+[THYMELEAF]     * LEGACYHTML5
+[THYMELEAF]     * VALIDXML
+[THYMELEAF] * Template resolvers (in order):
+[THYMELEAF]     * org.thymeleaf.spring4.templateresolver.SpringResourceTemplateResolver
+[THYMELEAF] * Message resolvers (in order):
+[THYMELEAF]     * org.thymeleaf.spring4.messageresolver.SpringMessageResolver
+[THYMELEAF] * Dialect [1 of 2]: org.thymeleaf.spring4.dialect.SpringStandardDialect
+[THYMELEAF]     * Prefix: "th"
+[THYMELEAF] * Dialect [2 of 2]: nz.net.ultraq.thymeleaf.LayoutDialect
+[THYMELEAF]     * Prefix: "layout"
+[THYMELEAF] TEMPLATE ENGINE CONFIGURED OK[0;39m[34m
+2017-10-10 10:23:02[0;39m | [34mINFO [0;39m | [33mhttp-nio-8080-exec-1[0;39m | [35morg.thymeleaf.TemplateEngine[0;39m  [36m
+[THYMELEAF] TEMPLATE ENGINE INITIALIZED[0;39m[34m
+2017-10-10 10:23:35[0;39m | [34mINFO [0;39m | [33mThread-27[0;39m | [35morg.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext[0;39m  [36m
+Closing org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@5bbf3ce8: startup date [Tue Oct 10 10:22:35 CST 2017]; root of context hierarchy[0;39m[34m
+2017-10-10 10:23:35[0;39m | [34mINFO [0;39m | [33mThread-27[0;39m | [35morg.springframework.jmx.export.annotation.AnnotationMBeanExporter[0;39m  [36m
+Unregistering JMX-exposed beans on shutdown[0;39m[34m
+2017-10-10 10:23:42[0;39m | [34mINFO [0;39m | [33mrestartedMain[0;39m | [35mcom.zdxj.App[0;39m  [36m
+Starting App on w with PID 8626 (/home/w/IdeaProjects/zdxj/target/classes started by w in /home/w/IdeaProjects/zdxj)[0;39m[34m
+2017-10-10 10:23:42[0;39m | [34mINFO [0;39m | [33mrestartedMain[0;39m | [35mcom.zdxj.App[0;39m  [36m
+No active profile set, falling back to default profiles: default[0;39m[34m
+2017-10-10 10:23:42[0;39m | [34mINFO [0;39m | [33mrestartedMain[0;39m | [35morg.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext[0;39m  [36m
+Refreshing org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@7ccf768f: startup date [Tue Oct 10 10:23:42 CST 2017]; root of context hierarchy[0;39m[34m
+2017-10-10 10:23:42[0;39m | [34mINFO [0;39m | [33mbackground-preinit[0;39m | [35morg.hibernate.validator.internal.util.Version[0;39m  [36m
+HV000001: Hibernate Validator 5.3.4.Final[0;39m[34m
+2017-10-10 10:23:45[0;39m | [34mINFO [0;39m | [33mrestartedMain[0;39m | [35morg.springframework.context.support.PostProcessorRegistrationDelegate$BeanPostProcessorChecker[0;39m  [36m
+Bean 'org.springframework.boot.autoconfigure.validation.ValidationAutoConfiguration' of type [class org.springframework.boot.autoconfigure.validation.ValidationAutoConfiguration] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)[0;39m[34m
+2017-10-10 10:23:46[0;39m | [34mINFO [0;39m | [33mrestartedMain[0;39m | [35morg.springframework.context.support.PostProcessorRegistrationDelegate$BeanPostProcessorChecker[0;39m  [36m
+Bean 'validator' of type [class org.springframework.validation.beanvalidation.LocalValidatorFactoryBean] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)[0;39m[34m
+2017-10-10 10:23:46[0;39m | [34mINFO [0;39m | [33mrestartedMain[0;39m | [35morg.springframework.boot.context.embedded.tomcat.TomcatEmbeddedServletContainer[0;39m  [36m
+Tomcat initialized with port(s): 8080 (http)[0;39m[34m
+2017-10-10 10:23:46[0;39m | [34mINFO [0;39m | [33mrestartedMain[0;39m | [35morg.apache.catalina.core.StandardService[0;39m  [36m
+Starting service Tomcat[0;39m[34m
+2017-10-10 10:23:46[0;39m | [34mINFO [0;39m | [33mrestartedMain[0;39m | [35morg.apache.catalina.core.StandardEngine[0;39m  [36m
+Starting Servlet Engine: Apache Tomcat/8.5.11[0;39m[34m
+2017-10-10 10:23:47[0;39m | [34mINFO [0;39m | [33mlocalhost-startStop-1[0;39m | [35morg.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/][0;39m  [36m
+Initializing Spring embedded WebApplicationContext[0;39m[34m
+2017-10-10 10:23:47[0;39m | [34mINFO [0;39m | [33mlocalhost-startStop-1[0;39m | [35morg.springframework.web.context.ContextLoader[0;39m  [36m
+Root WebApplicationContext: initialization completed in 4188 ms[0;39m[34m
+2017-10-10 10:23:47[0;39m | [34mINFO [0;39m | [33mlocalhost-startStop-1[0;39m | [35morg.springframework.boot.web.servlet.ServletRegistrationBean[0;39m  [36m
+Mapping servlet: 'dispatcherServlet' to [/][0;39m[34m
+2017-10-10 10:23:47[0;39m | [34mINFO [0;39m | [33mlocalhost-startStop-1[0;39m | [35morg.springframework.boot.web.servlet.FilterRegistrationBean[0;39m  [36m
+Mapping filter: 'characterEncodingFilter' to: [/*][0;39m[34m
+2017-10-10 10:23:47[0;39m | [34mINFO [0;39m | [33mlocalhost-startStop-1[0;39m | [35morg.springframework.boot.web.servlet.FilterRegistrationBean[0;39m  [36m
+Mapping filter: 'hiddenHttpMethodFilter' to: [/*][0;39m[34m
+2017-10-10 10:23:47[0;39m | [34mINFO [0;39m | [33mlocalhost-startStop-1[0;39m | [35morg.springframework.boot.web.servlet.FilterRegistrationBean[0;39m  [36m
+Mapping filter: 'httpPutFormContentFilter' to: [/*][0;39m[34m
+2017-10-10 10:23:47[0;39m | [34mINFO [0;39m | [33mlocalhost-startStop-1[0;39m | [35morg.springframework.boot.web.servlet.FilterRegistrationBean[0;39m  [36m
+Mapping filter: 'requestContextFilter' to: [/*][0;39m[34m
+2017-10-10 10:23:47[0;39m | [34mINFO [0;39m | [33mrestartedMain[0;39m | [35morg.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter[0;39m  [36m
+Looking for @ControllerAdvice: org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@7ccf768f: startup date [Tue Oct 10 10:23:42 CST 2017]; root of context hierarchy[0;39m[34m
+2017-10-10 10:23:47[0;39m | [34mINFO [0;39m | [33mrestartedMain[0;39m | [35morg.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping[0;39m  [36m
+Mapped "{[/],methods=[GET]}" onto public java.lang.String com.zdxj.ctrl.Cat.toIndex(org.springframework.ui.Model)[0;39m[34m
+2017-10-10 10:23:47[0;39m | [34mINFO [0;39m | [33mrestartedMain[0;39m | [35morg.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping[0;39m  [36m
+Mapped "{[/cat/{id}],methods=[GET]}" onto public java.lang.String com.zdxj.ctrl.Cat.Cat(int,org.springframework.ui.Model)[0;39m[34m
+2017-10-10 10:23:47[0;39m | [34mINFO [0;39m | [33mrestartedMain[0;39m | [35morg.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping[0;39m  [36m
+Mapped "{[/sys/{id}],methods=[GET]}" onto public java.lang.String com.zdxj.ctrl.Cat.CatSys(int,org.springframework.ui.Model)[0;39m[34m
+2017-10-10 10:23:47[0;39m | [34mINFO [0;39m | [33mrestartedMain[0;39m | [35morg.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping[0;39m  [36m
+Mapped "{[/base/{id}],methods=[GET]}" onto public java.lang.String com.zdxj.ctrl.Cat.catBase(int,org.springframework.ui.Model)[0;39m[34m
+2017-10-10 10:23:47[0;39m | [34mINFO [0;39m | [33mrestartedMain[0;39m | [35morg.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping[0;39m  [36m
+Mapped "{[/error],produces=[text/html]}" onto public org.springframework.web.servlet.ModelAndView org.springframework.boot.autoconfigure.web.BasicErrorController.errorHtml(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse)[0;39m[34m
+2017-10-10 10:23:47[0;39m | [34mINFO [0;39m | [33mrestartedMain[0;39m | [35morg.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping[0;39m  [36m
+Mapped "{[/error]}" onto public org.springframework.http.ResponseEntity<java.util.Map<java.lang.String, java.lang.Object>> org.springframework.boot.autoconfigure.web.BasicErrorController.error(javax.servlet.http.HttpServletRequest)[0;39m[34m
+2017-10-10 10:23:48[0;39m | [34mINFO [0;39m | [33mrestartedMain[0;39m | [35morg.springframework.web.servlet.handler.SimpleUrlHandlerMapping[0;39m  [36m
+Mapped URL path [/webjars/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler][0;39m[34m
+2017-10-10 10:23:48[0;39m | [34mINFO [0;39m | [33mrestartedMain[0;39m | [35morg.springframework.web.servlet.handler.SimpleUrlHandlerMapping[0;39m  [36m
+Mapped URL path [/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler][0;39m[34m
+2017-10-10 10:23:48[0;39m | [34mINFO [0;39m | [33mrestartedMain[0;39m | [35morg.springframework.web.servlet.handler.SimpleUrlHandlerMapping[0;39m  [36m
+Mapped URL path [/**/favicon.ico] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler][0;39m[34m
+2017-10-10 10:23:48[0;39m | [34mINFO [0;39m | [33mrestartedMain[0;39m | [35morg.springframework.boot.devtools.autoconfigure.OptionalLiveReloadServer[0;39m  [36m
+LiveReload server is running on port 35729[0;39m[34m
+2017-10-10 10:23:48[0;39m | [34mINFO [0;39m | [33mrestartedMain[0;39m | [35morg.springframework.jmx.export.annotation.AnnotationMBeanExporter[0;39m  [36m
+Registering beans for JMX exposure on startup[0;39m[34m
+2017-10-10 10:23:48[0;39m | [34mINFO [0;39m | [33mrestartedMain[0;39m | [35morg.apache.coyote.http11.Http11NioProtocol[0;39m  [36m
+Initializing ProtocolHandler ["http-nio-8080"][0;39m[34m
+2017-10-10 10:23:48[0;39m | [34mINFO [0;39m | [33mrestartedMain[0;39m | [35morg.apache.coyote.http11.Http11NioProtocol[0;39m  [36m
+Starting ProtocolHandler [http-nio-8080][0;39m[34m
+2017-10-10 10:23:48[0;39m | [34mINFO [0;39m | [33mrestartedMain[0;39m | [35morg.apache.tomcat.util.net.NioSelectorPool[0;39m  [36m
+Using a shared selector for servlet write/read[0;39m[34m
+2017-10-10 10:23:48[0;39m | [34mINFO [0;39m | [33mrestartedMain[0;39m | [35morg.springframework.boot.context.embedded.tomcat.TomcatEmbeddedServletContainer[0;39m  [36m
+Tomcat started on port(s): 8080 (http)[0;39m[34m
+2017-10-10 10:23:48[0;39m | [34mINFO [0;39m | [33mrestartedMain[0;39m | [35mcom.zdxj.App[0;39m  [36m
+Started App in 7.899 seconds (JVM running for 9.879)[0;39m[34m
+2017-10-10 10:23:51[0;39m | [34mINFO [0;39m | [33mhttp-nio-8080-exec-1[0;39m | [35morg.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/][0;39m  [36m
+Initializing Spring FrameworkServlet 'dispatcherServlet'[0;39m[34m
+2017-10-10 10:23:51[0;39m | [34mINFO [0;39m | [33mhttp-nio-8080-exec-1[0;39m | [35morg.springframework.web.servlet.DispatcherServlet[0;39m  [36m
+FrameworkServlet 'dispatcherServlet': initialization started[0;39m[34m
+2017-10-10 10:23:52[0;39m | [34mINFO [0;39m | [33mhttp-nio-8080-exec-1[0;39m | [35morg.springframework.web.servlet.DispatcherServlet[0;39m  [36m
+FrameworkServlet 'dispatcherServlet': initialization completed in 26 ms[0;39m[34m
+2017-10-10 10:23:52[0;39m | [34mINFO [0;39m | [33mhttp-nio-8080-exec-1[0;39m | [35morg.thymeleaf.TemplateEngine[0;39m  [36m
+[THYMELEAF] INITIALIZING TEMPLATE ENGINE[0;39m[34m
+2017-10-10 10:23:52[0;39m | [34mINFO [0;39m | [33mhttp-nio-8080-exec-1[0;39m | [35morg.thymeleaf.templateresolver.AbstractTemplateResolver[0;39m  [36m
+[THYMELEAF] INITIALIZING TEMPLATE RESOLVER: org.thymeleaf.spring4.templateresolver.SpringResourceTemplateResolver[0;39m[34m
+2017-10-10 10:23:52[0;39m | [34mINFO [0;39m | [33mhttp-nio-8080-exec-1[0;39m | [35morg.thymeleaf.templateresolver.AbstractTemplateResolver[0;39m  [36m
+[THYMELEAF] TEMPLATE RESOLVER INITIALIZED OK[0;39m[34m
+2017-10-10 10:23:52[0;39m | [34mINFO [0;39m | [33mhttp-nio-8080-exec-1[0;39m | [35morg.thymeleaf.messageresolver.AbstractMessageResolver[0;39m  [36m
+[THYMELEAF] INITIALIZING MESSAGE RESOLVER: org.thymeleaf.spring4.messageresolver.SpringMessageResolver[0;39m[34m
+2017-10-10 10:23:52[0;39m | [34mINFO [0;39m | [33mhttp-nio-8080-exec-1[0;39m | [35morg.thymeleaf.messageresolver.AbstractMessageResolver[0;39m  [36m
+[THYMELEAF] MESSAGE RESOLVER INITIALIZED OK[0;39m[34m
+2017-10-10 10:23:52[0;39m | [34mINFO [0;39m | [33mhttp-nio-8080-exec-1[0;39m | [35morg.thymeleaf.TemplateEngine.CONFIG[0;39m  [36m
+[THYMELEAF] TEMPLATE ENGINE CONFIGURATION:
+[THYMELEAF] * Cache Factory implementation: org.thymeleaf.cache.StandardCacheManager
+[THYMELEAF] * Template modes:
+[THYMELEAF]     * HTML5
+[THYMELEAF]     * XML
+[THYMELEAF]     * XHTML
+[THYMELEAF]     * LEGACYHTML5
+[THYMELEAF]     * VALIDXML
+[THYMELEAF]     * VALIDXHTML
+[THYMELEAF] * Template resolvers (in order):
+[THYMELEAF]     * org.thymeleaf.spring4.templateresolver.SpringResourceTemplateResolver
+[THYMELEAF] * Message resolvers (in order):
+[THYMELEAF]     * org.thymeleaf.spring4.messageresolver.SpringMessageResolver
+[THYMELEAF] * Dialect [1 of 2]: org.thymeleaf.spring4.dialect.SpringStandardDialect
+[THYMELEAF]     * Prefix: "th"
+[THYMELEAF] * Dialect [2 of 2]: nz.net.ultraq.thymeleaf.LayoutDialect
+[THYMELEAF]     * Prefix: "layout"
+[THYMELEAF] TEMPLATE ENGINE CONFIGURED OK[0;39m[34m
+2017-10-10 10:23:52[0;39m | [34mINFO [0;39m | [33mhttp-nio-8080-exec-1[0;39m | [35morg.thymeleaf.TemplateEngine[0;39m  [36m
+[THYMELEAF] TEMPLATE ENGINE INITIALIZED[0;39m[34m
+2017-10-10 10:24:17[0;39m | [34mINFO [0;39m | [33mThread-25[0;39m | [35morg.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext[0;39m  [36m
+Closing org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@7ccf768f: startup date [Tue Oct 10 10:23:42 CST 2017]; root of context hierarchy[0;39m[34m
+2017-10-10 10:24:17[0;39m | [34mINFO [0;39m | [33mThread-25[0;39m | [35morg.springframework.jmx.export.annotation.AnnotationMBeanExporter[0;39m  [36m
+Unregistering JMX-exposed beans on shutdown[0;39m[34m
+2017-10-10 10:24:22[0;39m | [34mINFO [0;39m | [33mrestartedMain[0;39m | [35mcom.zdxj.App[0;39m  [36m
+Starting App on w with PID 8751 (/home/w/IdeaProjects/zdxj/target/classes started by w in /home/w/IdeaProjects/zdxj)[0;39m[34m
+2017-10-10 10:24:22[0;39m | [34mINFO [0;39m | [33mrestartedMain[0;39m | [35mcom.zdxj.App[0;39m  [36m
+No active profile set, falling back to default profiles: default[0;39m[34m
+2017-10-10 10:24:23[0;39m | [34mINFO [0;39m | [33mrestartedMain[0;39m | [35morg.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext[0;39m  [36m
+Refreshing org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@2d369f9c: startup date [Tue Oct 10 10:24:23 CST 2017]; root of context hierarchy[0;39m[34m
+2017-10-10 10:24:23[0;39m | [34mINFO [0;39m | [33mbackground-preinit[0;39m | [35morg.hibernate.validator.internal.util.Version[0;39m  [36m
+HV000001: Hibernate Validator 5.3.4.Final[0;39m[34m
+2017-10-10 10:24:26[0;39m | [34mINFO [0;39m | [33mrestartedMain[0;39m | [35morg.springframework.context.support.PostProcessorRegistrationDelegate$BeanPostProcessorChecker[0;39m  [36m
+Bean 'org.springframework.boot.autoconfigure.validation.ValidationAutoConfiguration' of type [class org.springframework.boot.autoconfigure.validation.ValidationAutoConfiguration] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)[0;39m[34m
+2017-10-10 10:24:26[0;39m | [34mINFO [0;39m | [33mrestartedMain[0;39m | [35morg.springframework.context.support.PostProcessorRegistrationDelegate$BeanPostProcessorChecker[0;39m  [36m
+Bean 'validator' of type [class org.springframework.validation.beanvalidation.LocalValidatorFactoryBean] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)[0;39m[34m
+2017-10-10 10:24:26[0;39m | [34mINFO [0;39m | [33mrestartedMain[0;39m | [35morg.springframework.boot.context.embedded.tomcat.TomcatEmbeddedServletContainer[0;39m  [36m
+Tomcat initialized with port(s): 8080 (http)[0;39m[34m
+2017-10-10 10:24:26[0;39m | [34mINFO [0;39m | [33mrestartedMain[0;39m | [35morg.apache.catalina.core.StandardService[0;39m  [36m
+Starting service Tomcat[0;39m[34m
+2017-10-10 10:24:26[0;39m | [34mINFO [0;39m | [33mrestartedMain[0;39m | [35morg.apache.catalina.core.StandardEngine[0;39m  [36m
+Starting Servlet Engine: Apache Tomcat/8.5.11[0;39m[34m
+2017-10-10 10:24:27[0;39m | [34mINFO [0;39m | [33mlocalhost-startStop-1[0;39m | [35morg.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/][0;39m  [36m
+Initializing Spring embedded WebApplicationContext[0;39m[34m
+2017-10-10 10:24:27[0;39m | [34mINFO [0;39m | [33mlocalhost-startStop-1[0;39m | [35morg.springframework.web.context.ContextLoader[0;39m  [36m
+Root WebApplicationContext: initialization completed in 3802 ms[0;39m[34m
+2017-10-10 10:24:27[0;39m | [34mINFO [0;39m | [33mlocalhost-startStop-1[0;39m | [35morg.springframework.boot.web.servlet.ServletRegistrationBean[0;39m  [36m
+Mapping servlet: 'dispatcherServlet' to [/][0;39m[34m
+2017-10-10 10:24:27[0;39m | [34mINFO [0;39m | [33mlocalhost-startStop-1[0;39m | [35morg.springframework.boot.web.servlet.FilterRegistrationBean[0;39m  [36m
+Mapping filter: 'characterEncodingFilter' to: [/*][0;39m[34m
+2017-10-10 10:24:27[0;39m | [34mINFO [0;39m | [33mlocalhost-startStop-1[0;39m | [35morg.springframework.boot.web.servlet.FilterRegistrationBean[0;39m  [36m
+Mapping filter: 'hiddenHttpMethodFilter' to: [/*][0;39m[34m
+2017-10-10 10:24:27[0;39m | [34mINFO [0;39m | [33mlocalhost-startStop-1[0;39m | [35morg.springframework.boot.web.servlet.FilterRegistrationBean[0;39m  [36m
+Mapping filter: 'httpPutFormContentFilter' to: [/*][0;39m[34m
+2017-10-10 10:24:27[0;39m | [34mINFO [0;39m | [33mlocalhost-startStop-1[0;39m | [35morg.springframework.boot.web.servlet.FilterRegistrationBean[0;39m  [36m
+Mapping filter: 'requestContextFilter' to: [/*][0;39m[34m
+2017-10-10 10:24:27[0;39m | [34mINFO [0;39m | [33mrestartedMain[0;39m | [35morg.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter[0;39m  [36m
+Looking for @ControllerAdvice: org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@2d369f9c: startup date [Tue Oct 10 10:24:23 CST 2017]; root of context hierarchy[0;39m[34m
+2017-10-10 10:24:27[0;39m | [34mINFO [0;39m | [33mrestartedMain[0;39m | [35morg.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping[0;39m  [36m
+Mapped "{[/],methods=[GET]}" onto public java.lang.String com.zdxj.ctrl.Cat.toIndex(org.springframework.ui.Model)[0;39m[34m
+2017-10-10 10:24:27[0;39m | [34mINFO [0;39m | [33mrestartedMain[0;39m | [35morg.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping[0;39m  [36m
+Mapped "{[/cat/{id}],methods=[GET]}" onto public java.lang.String com.zdxj.ctrl.Cat.Cat(int,org.springframework.ui.Model)[0;39m[34m
+2017-10-10 10:24:27[0;39m | [34mINFO [0;39m | [33mrestartedMain[0;39m | [35morg.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping[0;39m  [36m
+Mapped "{[/sys/{id}],methods=[GET]}" onto public java.lang.String com.zdxj.ctrl.Cat.CatSys(int,org.springframework.ui.Model)[0;39m[34m
+2017-10-10 10:24:27[0;39m | [34mINFO [0;39m | [33mrestartedMain[0;39m | [35morg.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping[0;39m  [36m
+Mapped "{[/base/{id}],methods=[GET]}" onto public java.lang.String com.zdxj.ctrl.Cat.catBase(int,org.springframework.ui.Model)[0;39m[34m
+2017-10-10 10:24:27[0;39m | [34mINFO [0;39m | [33mrestartedMain[0;39m | [35morg.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping[0;39m  [36m
+Mapped "{[/error],produces=[text/html]}" onto public org.springframework.web.servlet.ModelAndView org.springframework.boot.autoconfigure.web.BasicErrorController.errorHtml(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse)[0;39m[34m
+2017-10-10 10:24:27[0;39m | [34mINFO [0;39m | [33mrestartedMain[0;39m | [35morg.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping[0;39m  [36m
+Mapped "{[/error]}" onto public org.springframework.http.ResponseEntity<java.util.Map<java.lang.String, java.lang.Object>> org.springframework.boot.autoconfigure.web.BasicErrorController.error(javax.servlet.http.HttpServletRequest)[0;39m[34m
+2017-10-10 10:24:27[0;39m | [34mINFO [0;39m | [33mrestartedMain[0;39m | [35morg.springframework.web.servlet.handler.SimpleUrlHandlerMapping[0;39m  [36m
+Mapped URL path [/webjars/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler][0;39m[34m
+2017-10-10 10:24:27[0;39m | [34mINFO [0;39m | [33mrestartedMain[0;39m | [35morg.springframework.web.servlet.handler.SimpleUrlHandlerMapping[0;39m  [36m
+Mapped URL path [/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler][0;39m[34m
+2017-10-10 10:24:27[0;39m | [34mINFO [0;39m | [33mrestartedMain[0;39m | [35morg.springframework.web.servlet.handler.SimpleUrlHandlerMapping[0;39m  [36m
+Mapped URL path [/**/favicon.ico] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler][0;39m[34m
+2017-10-10 10:24:28[0;39m | [34mINFO [0;39m | [33mrestartedMain[0;39m | [35morg.springframework.boot.devtools.autoconfigure.OptionalLiveReloadServer[0;39m  [36m
+LiveReload server is running on port 35729[0;39m[34m
+2017-10-10 10:24:28[0;39m | [34mINFO [0;39m | [33mrestartedMain[0;39m | [35morg.springframework.jmx.export.annotation.AnnotationMBeanExporter[0;39m  [36m
+Registering beans for JMX exposure on startup[0;39m[34m
+2017-10-10 10:24:28[0;39m | [34mINFO [0;39m | [33mrestartedMain[0;39m | [35morg.apache.coyote.http11.Http11NioProtocol[0;39m  [36m
+Initializing ProtocolHandler ["http-nio-8080"][0;39m[34m
+2017-10-10 10:24:28[0;39m | [34mINFO [0;39m | [33mrestartedMain[0;39m | [35morg.apache.coyote.http11.Http11NioProtocol[0;39m  [36m
+Starting ProtocolHandler [http-nio-8080][0;39m[34m
+2017-10-10 10:24:28[0;39m | [34mINFO [0;39m | [33mrestartedMain[0;39m | [35morg.apache.tomcat.util.net.NioSelectorPool[0;39m  [36m
+Using a shared selector for servlet write/read[0;39m[34m
+2017-10-10 10:24:28[0;39m | [34mINFO [0;39m | [33mrestartedMain[0;39m | [35morg.springframework.boot.context.embedded.tomcat.TomcatEmbeddedServletContainer[0;39m  [36m
+Tomcat started on port(s): 8080 (http)[0;39m[34m
+2017-10-10 10:24:28[0;39m | [34mINFO [0;39m | [33mrestartedMain[0;39m | [35mcom.zdxj.App[0;39m  [36m
+Started App in 6.845 seconds (JVM running for 8.632)[0;39m[34m
+2017-10-10 10:26:05[0;39m | [34mINFO [0;39m | [33mhttp-nio-8080-exec-1[0;39m | [35morg.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/][0;39m  [36m
+Initializing Spring FrameworkServlet 'dispatcherServlet'[0;39m[34m
+2017-10-10 10:26:05[0;39m | [34mINFO [0;39m | [33mhttp-nio-8080-exec-1[0;39m | [35morg.springframework.web.servlet.DispatcherServlet[0;39m  [36m
+FrameworkServlet 'dispatcherServlet': initialization started[0;39m[34m
+2017-10-10 10:26:05[0;39m | [34mINFO [0;39m | [33mhttp-nio-8080-exec-1[0;39m | [35morg.springframework.web.servlet.DispatcherServlet[0;39m  [36m
+FrameworkServlet 'dispatcherServlet': initialization completed in 26 ms[0;39m[34m
+2017-10-10 10:26:05[0;39m | [34mINFO [0;39m | [33mhttp-nio-8080-exec-1[0;39m | [35morg.thymeleaf.TemplateEngine[0;39m  [36m
+[THYMELEAF] INITIALIZING TEMPLATE ENGINE[0;39m[34m
+2017-10-10 10:26:05[0;39m | [34mINFO [0;39m | [33mhttp-nio-8080-exec-1[0;39m | [35morg.thymeleaf.templateresolver.AbstractTemplateResolver[0;39m  [36m
+[THYMELEAF] INITIALIZING TEMPLATE RESOLVER: org.thymeleaf.spring4.templateresolver.SpringResourceTemplateResolver[0;39m[34m
+2017-10-10 10:26:05[0;39m | [34mINFO [0;39m | [33mhttp-nio-8080-exec-1[0;39m | [35morg.thymeleaf.templateresolver.AbstractTemplateResolver[0;39m  [36m
+[THYMELEAF] TEMPLATE RESOLVER INITIALIZED OK[0;39m[34m
+2017-10-10 10:26:05[0;39m | [34mINFO [0;39m | [33mhttp-nio-8080-exec-1[0;39m | [35morg.thymeleaf.messageresolver.AbstractMessageResolver[0;39m  [36m
+[THYMELEAF] INITIALIZING MESSAGE RESOLVER: org.thymeleaf.spring4.messageresolver.SpringMessageResolver[0;39m[34m
+2017-10-10 10:26:05[0;39m | [34mINFO [0;39m | [33mhttp-nio-8080-exec-1[0;39m | [35morg.thymeleaf.messageresolver.AbstractMessageResolver[0;39m  [36m
+[THYMELEAF] MESSAGE RESOLVER INITIALIZED OK[0;39m[34m
+2017-10-10 10:26:05[0;39m | [34mINFO [0;39m | [33mhttp-nio-8080-exec-1[0;39m | [35morg.thymeleaf.TemplateEngine.CONFIG[0;39m  [36m
+[THYMELEAF] TEMPLATE ENGINE CONFIGURATION:
+[THYMELEAF] * Cache Factory implementation: org.thymeleaf.cache.StandardCacheManager
+[THYMELEAF] * Template modes:
+[THYMELEAF]     * XML
+[THYMELEAF]     * LEGACYHTML5
+[THYMELEAF]     * VALIDXML
+[THYMELEAF]     * XHTML
+[THYMELEAF]     * HTML5
+[THYMELEAF]     * VALIDXHTML
+[THYMELEAF] * Template resolvers (in order):
+[THYMELEAF]     * org.thymeleaf.spring4.templateresolver.SpringResourceTemplateResolver
+[THYMELEAF] * Message resolvers (in order):
+[THYMELEAF]     * org.thymeleaf.spring4.messageresolver.SpringMessageResolver
+[THYMELEAF] * Dialect [1 of 2]: org.thymeleaf.spring4.dialect.SpringStandardDialect
+[THYMELEAF]     * Prefix: "th"
+[THYMELEAF] * Dialect [2 of 2]: nz.net.ultraq.thymeleaf.LayoutDialect
+[THYMELEAF]     * Prefix: "layout"
+[THYMELEAF] TEMPLATE ENGINE CONFIGURED OK[0;39m[34m
+2017-10-10 10:26:05[0;39m | [34mINFO [0;39m | [33mhttp-nio-8080-exec-1[0;39m | [35morg.thymeleaf.TemplateEngine[0;39m  [36m
+[THYMELEAF] TEMPLATE ENGINE INITIALIZED[0;39m[34m
+2017-10-10 10:26:19[0;39m | [34mINFO [0;39m | [33mThread-23[0;39m | [35morg.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext[0;39m  [36m
+Closing org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@2d369f9c: startup date [Tue Oct 10 10:24:23 CST 2017]; root of context hierarchy[0;39m[34m
+2017-10-10 10:26:19[0;39m | [34mINFO [0;39m | [33mThread-23[0;39m | [35morg.springframework.jmx.export.annotation.AnnotationMBeanExporter[0;39m  [36m
+Unregistering JMX-exposed beans on shutdown[0;39m

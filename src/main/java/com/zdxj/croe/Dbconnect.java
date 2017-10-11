@@ -17,7 +17,7 @@ public class Dbconnect {
 
             Class.forName("oracle.jdbc.driver.OracleDriver");
             //根据数据库连接字符，名称，密码给conn赋值
-            return DriverManager.getConnection("jdbc:oracle:thin:@" + datasoruce.getIP() + ":" + datasoruce.getProt() + ":" + datasoruce.getSid()
+            return DriverManager.getConnection("jdbc:oracle:thin:@//" + datasoruce.getIP() + "/" + datasoruce.getProt() + ":" + datasoruce.getSid()
                     , datasoruce.getUserName(), datasoruce.getPasswd());
 
     }
